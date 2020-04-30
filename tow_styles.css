@@ -1,0 +1,15 @@
+body {
+    background-color: skyblue;
+}
+
+#scoreboard {
+    align-items: center;
+    background: white;
+    width: 15%;
+    height: 20%;
+    margin-left: 42.5%;
+    margin-right: 42.5%;
+    border-style: solid;
+    border-color: red;
+    border: 1%;
+}
