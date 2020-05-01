@@ -12,4 +12,31 @@ body {
     border-style: solid;
     border-color: red;
     border: 1%;
+    text-align: center;
+}
+
+#sbw {
+    color: red;
+    font-weight: bold;
+}
+
+#Lscore {
+    width: 40%;
+    height: 40%;
+    margin-left: 6%;
+    border-style: solid;
+    border-color: red;
+    border: 0.5%;
+    text-align: center;
+    float: left;
+}
+
+#Rscore {
+    width: 40%;
+    height: 40%;
+    border-style: solid;
+    border-color: red;
+    border: 0.5%;
+    text-align: center;
+    float: left;
 }
