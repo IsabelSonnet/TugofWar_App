@@ -3,21 +3,25 @@ body {
 }
 
 #scoreboard {
+    float: left;
     align-items: center;
     background: white;
     width: 15%;
     height: 20%;
-    margin-left: 42.5%;
-    margin-right: 42.5%;
-    border-style: solid;
+    margin-left: 10%;
+    border-style: outset;
     border-color: red;
     border: 1%;
     text-align: center;
 }
 
-#sbw {
+#sbt {
     color: red;
     font-weight: bold;
+}
+
+.sbw {
+    color: white;
 }
 
 #Lscore {
@@ -25,18 +29,60 @@ body {
     height: 40%;
     margin-left: 6%;
     border-style: solid;
-    border-color: red;
+    border-color: white;
     border: 0.5%;
     text-align: center;
     float: left;
+    background: red;
 }
 
 #Rscore {
     width: 40%;
     height: 40%;
     border-style: solid;
-    border-color: red;
+    border-color: white;
     border: 0.5%;
     text-align: center;
     float: left;
+    background: red;
+}
+
+#extrapl {
+    margin-left: 2%;
+    float: left;
+    width: 30%;
+    height: 25%;
+    background-color: gold;
+    border-style: outset;
+    border-color: deepskyblue;
+    border: 1%;
+}
+
+#extrapr {
+    margin-left: 10%;
+    float: left;
+    width: 30%;
+    height: 25%;
+    background-color: gold;
+    border-style: outset;
+    border-color: deepskyblue;
+    border: 1%;
+}
+
+.ept {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+#line {
+    height: 100%;
+    width: 0.5%;
+    background-color: gold;
+    z-index: 2;
+    margin-left: 50%;
+    margin-right: 50%;
+    border-style: solid;
+    border: 1%;
+    border-color: yellow;
 }
