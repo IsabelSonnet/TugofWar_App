@@ -11,7 +11,7 @@ body {
     margin-left: 10%;
     border-style: outset;
     border-color: red;
-    border: 1%;
+    border-width: 1%;
     text-align: center;
 }
 
@@ -30,7 +30,7 @@ body {
     margin-left: 6%;
     border-style: solid;
     border-color: white;
-    border: 0.5%;
+    border-width: 0.5%;
     text-align: center;
     float: left;
     background: red;
@@ -41,7 +41,7 @@ body {
     height: 40%;
     border-style: solid;
     border-color: white;
-    border: 0.5%;
+    border-width: 0.5%;
     text-align: center;
     float: left;
     background: red;
@@ -55,7 +55,7 @@ body {
     background-color: gold;
     border-style: outset;
     border-color: deepskyblue;
-    border: 1%;
+    border-width: 1%;
 }
 
 #extrapr {
@@ -66,7 +66,7 @@ body {
     background-color: gold;
     border-style: outset;
     border-color: deepskyblue;
-    border: 1%;
+    border-width: 1%;
 }
 
 .ept {
@@ -83,6 +83,23 @@ body {
     margin-left: 50%;
     margin-right: 50%;
     border-style: solid;
-    border: 1%;
+    border-width: 1%;
     border-color: yellow;
+}
+
+#movingtow {
+    position: absolute;
+    bottom: 0;
+    left: 32%;
+}
+
+.stfigure {
+    width: 100px;
+    height: 100px;
+}
+
+#rope {
+    width: 300px;
+    height: 26px;
+    margin-bottom: 37px;
 }
