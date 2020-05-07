@@ -17,4 +17,30 @@ $(document).ready(() => {
         }
     });
 
+    let line = $("#line");
+    let rplayer = $("#rplayer");
+    let lplayer = $("#lplayer");
+
+    $(document).keydown(function (event) {
+        if (collision($rplayer, $line) == true) {
+            console.log("collision!");
+        } else {
+            console.log("no collision!");
+        }
+    });
+
+
+    // Here is the collision algorithm
+    function collision(R, l) {
+        if (R.position().left < l.position().left + l.width() &&
+            R.position().left + R.width() > l.position().left &&
+            R.position().top < l.position().top + l.height() &&
+            R.position().top + R.height() > l.position().top)
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 });
