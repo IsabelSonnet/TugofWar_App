@@ -114,3 +114,9 @@ body {
     text-align: center;
     background: gold;
 }
+
+.center{
+  margin: auto;
+  width: 1000%;
+  border: 5px solid red;
+}
