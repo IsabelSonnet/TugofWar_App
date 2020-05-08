@@ -116,7 +116,10 @@ body {
 }
 
 .center{
-  margin: auto;
-  width: 1000%;
-  border: 5px solid red;
+    position: absolute;
+    margin-left: 45%;
+    margin-top: 12%;
+    z-index: 6;
+    width: 10%;
+    border: 5px solid red;
 }
