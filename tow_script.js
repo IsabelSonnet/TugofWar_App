@@ -59,16 +59,15 @@ $(document).ready(() => {
         }
     }
 
+    var remaining = 40;
+    var timer = setInterval(function () {
+        if (remaining <= 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").alert = "Finished";
+        } else {
+        document.getElementById("countdown").innerHTML = remaining + " seconds left";
+        }
+        remaining -= 1;
+    }, 1000);
+
 });
-
-var remaining = 40;
-var timer = setInterval(function(){
-  if(remaining <= 0){
-    clearInterval(timer);
-    document.getElementById("countdown").alert = "Finished";
-  } else {
-    document.getElementById("countdown").innerHTML = remaining + " seconds left";
-  }
-  remaining-= 1;
-}, 1000);
-
