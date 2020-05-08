@@ -121,4 +121,5 @@ body {
     z-index: 6;
     width: 10%;
     border: 5px solid red;
+    background: orange;
 }
