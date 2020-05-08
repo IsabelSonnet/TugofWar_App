@@ -19,7 +19,9 @@ $(document).ready(() => {
                 });
                 break;
         }
+    });
 
+    $(document).keydown(function (event) {
         if (collision($rplayer, $line) == true) {
             $("#lwinner").show();
             console.log("collision!");
@@ -36,16 +38,6 @@ $(document).ready(() => {
             $("#rwinner").hide();
         }
     });
-
- //   $(document).keydown(function (event) {
- //       if (collision($rplayer, $line) == true) {
- //           $("#winner").show();
- //           console.log("collision!");
- //       } else {
- //           console.log("no collision!");
- //           $("#winner").hide();
- //       }
- //   });
 
     function collision(p, l) {
         if (p.position().left < l.position().left + l.width() &&
