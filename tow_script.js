@@ -39,6 +39,11 @@ $(document).ready(() => {
         }
     });
 
+    $("#startGame").click(function () {
+        $("#instructions").hide();
+        showGame();
+    });
+
     function hideGame() {
         $("#extrapr").hide();
         $("#extrapl").hide();
@@ -81,3 +86,4 @@ $(document).ready(() => {
     }, 1000);
 
 });
+

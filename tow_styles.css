@@ -140,3 +140,19 @@ body {
     font-weight: bold;
     font-size: x-large;
 }
+
+#instructionText {
+    color: white;
+}
+
+.big2 {
+    font-size: xx-large;
+    color: red;
+    font-weight: bold;
+    padding: 5%;
+}
+
+#startGame {
+    background: red;
+    color: white;
+}
