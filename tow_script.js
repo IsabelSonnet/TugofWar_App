@@ -25,19 +25,41 @@ $(document).ready(() => {
         if (collision($rplayer, $line) == true) {
             $("#lwinner").show();
             console.log("collision!");
+            hideGame();
         } else {
             console.log("no collision!");
             $("#lwinner").hide();
+            showGame();
         }
 
         if (collision($lplayer, $line) == true) {
             $("#rwinner").show();
             console.log("collision!");
+            hideGame();
         } else {
             console.log("no collision!");
             $("#rwinner").hide();
+            showGame();
         }
     });
+
+    function hideGame() {
+        $("#extrapr").hide();
+        $("#extrapl").hide();
+        $line.hide();
+        mtow.hide();
+        $("#scoreboard").hide();
+        $("#countdown").hide();
+    }
+
+    function showGame() {
+        $("#extrapr").show();
+        $("#extrapl").show();
+        $line.show();
+        mtow.show();
+        $("#scoreboard").show();
+        $("#countdown").show();
+    }
 
     function collision(p, l) {
         if (p.position().left < l.position().left + l.width() &&
