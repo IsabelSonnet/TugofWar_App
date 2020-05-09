@@ -12,34 +12,30 @@ $(document).ready(() => {
                 $(mtow).finish().animate({
                     left: "-=20"
                 });
+                if (collision($rplayer, $line) == true) {
+                    $("#lwinner").show();
+                    console.log("collision!");
+                    hideGame();
+                } else {
+                    console.log("no collision!");
+                    $("#lwinner").hide();
+                    showGame();
+                }
                 break;
             case 39:
                 $(mtow).finish().animate({
                     left: "+=20"
                 });
+                if (collision($lplayer, $line) == true) {
+                    $("#rwinner").show();
+                    console.log("collision!");
+                    hideGame();
+                } else {
+                    console.log("no collision!");
+                    $("#rwinner").hide();
+                    showGame();
+                }
                 break;
-        }
-    });
-
-    $(document).keydown(function (event) {
-        if (collision($rplayer, $line) == true) {
-            $("#lwinner").show();
-            console.log("collision!");
-            hideGame();
-        } else {
-            console.log("no collision!");
-            $("#lwinner").hide();
-            showGame();
-        }
-
-        if (collision($lplayer, $line) == true) {
-            $("#rwinner").show();
-            console.log("collision!");
-            hideGame();
-        } else {
-            console.log("no collision!");
-            $("#rwinner").hide();
-            showGame();
         }
     });
 

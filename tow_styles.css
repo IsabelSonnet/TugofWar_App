@@ -124,3 +124,19 @@ body {
     border: 5px solid red;
     background: orange;
 }
+
+.big {
+    font-size: xx-large;
+    color: red;
+    font-weight: bold;
+    padding: 10%;
+}
+
+.red {
+    color: red;
+}
+.score {
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
+}
