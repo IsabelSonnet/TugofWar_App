@@ -74,7 +74,7 @@ $(document).ready(() => {
         }
     }
 
-    var remaining = 40;
+    var remaining = 40; //we need to find a way to wait to start the timer until the start game button is pressed and finish when the collision happens
     var timer = setInterval(function () {
         if (remaining <= 0) {
         clearInterval(timer);
