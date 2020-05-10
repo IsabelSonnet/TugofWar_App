@@ -2,7 +2,6 @@ $(document).ready(() => {
 
     var mtow = $("#movingtow");
 
-    let $mtowDiv = $("#movingtow");
     let $line = $("#line");
     let $rplayer = $("#rplayer");
     let $lplayer = $("#lplayer");
@@ -22,14 +21,11 @@ $(document).ready(() => {
         }
     });
 
-
-
     $(document).keydown(function (event) {
         console.log($rplayer)
         console.log($lplayer)
-        console.log($lplayer)
 
-        if (hasRightLost($mtowDiv, $rplayer, $line) == true) {
+        if (hasRightLost($rplayer, 400) == true) {
             console.log("collision!");
             $("#lwinner").show();
             $("#rwinner").hide();
@@ -37,7 +33,7 @@ $(document).ready(() => {
             console.log("no collision!");
         }
 
-        if (hasLeftLost($mtowDiv, $lplayer, $line) == true) {
+        if (hasLeftLost($lplayer, 400) == true) {
             console.log("collision!");
             $("#rwinner").show();
             $("#lwinner").hide();
@@ -46,10 +42,13 @@ $(document).ready(() => {
         }
     });
 
-    function hasRightLost(m, p, l) {
-        console.log("checking if right has lost")
-        console.log("tow right: ", m.position().left + m.width(), " player width: ", p.width(),  " line: ", l, " difference: ", ( m.position().left + m.width() -p.width()) - l)
-        if (( m.position().left + m.width() -p.width()) < (l.position().left+(0.5*l.width())))
+    function collision_sg(p, l) {
+        console.log("p.left", p.position().left);
+        console.log("p.right", p.width());
+        console.log("line.left", l.position().left);
+
+        if (p.position().left < l.position().left &&
+            p.position().left + p.width() > l.position().left)
         {
             return true;
         } else {
@@ -57,10 +56,13 @@ $(document).ready(() => {
         }
     }
 
-    function hasLeftLost(m, p, l) {
-        console.log("checking if left has lost")
-        console.log("tow left: ", m.position().left, " player width: ", p.width(),  " line: ", l, "difference: ", (m.position().left + p.width()) - l)
-        if (( m.position().left + p.width())  > (l.position().left+(0.5*l.width())))
+     function collision(p, l) {
+        if (p.position().left < l.position().left + l.width() &&
+            p.position().left + p.width() > l.position().left
+            //&&
+            //p.position().top < l.position().top + l.height() &&
+            //p.position().top + p.height() > l.position().top
+           )
         {
             return true;
         } else {
@@ -68,7 +70,26 @@ $(document).ready(() => {
         }
     }
 
+    function hasRightLost(p, l) {
+        console.log("checking if right has won")
+        if (p.position().left < l)
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
+    function hasLeftLost(p, l) {
+        console.log("checking if left has won")
+        console.log("player left: ", p.position().left, " line: ", l, "difference: ", p.position().left - l)
+        if (p.position().left > l)
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 
     var remaining = 40;
