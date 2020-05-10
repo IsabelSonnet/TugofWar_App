@@ -5,16 +5,29 @@
 </head>
 
 <body>
+    <div id="instructions" class="winner">
+        <p class="big2">WELCOME TO EXTREME TUG OF WAR!</p>
+        <p id="instructionText">hahahahahahahahah</p>
+        <button id="startGame">Start Game</button>
+    </div>
     <div id="lwinner" class="winner" style="display:none;">
-        <p>Left Wins!</p>
+        <p class="big">Left Wins!</p>
+        <p class="red">The score is:</p>
+        <p class="score"></p>
+        <p class="red">To start the next round, press the button.</p>
+        <button>Start</button>
     </div>
     <div id="rwinner" class="winner" style="display:none;">
-        <p>Right Wins!</p>
+        <p class="big">Right Wins!</p>
+        <p class="red">The score is:</p>
+        <p class="score"></p>
+        <p class="red">To start the next round, press the button.</p>
+        <button>Start</button>
     </div>
-    <div id="extrapl">
+    <div id="extrapl" style="display:none;">
         <p class="ept">EXTRA PLAYERS</p>
     </div>
-    <div id="scoreboard">
+    <div id="scoreboard" style="display:none;">
         <p id="sbt">SCOREBOARD</p>
         <div id="Lscore">
             <p class="sbw">Left: <b>0</b></p>
@@ -23,16 +36,16 @@
             <p class="sbw">Right: <b>0</b></p>
         </div>
     </div>
-    <div id="extrapr">
+    <div id="extrapr" style="display:none;">
         <p class="ept">EXTRA PLAYERS</p>
     </div>
-    <div id="movingtow"> <!--needs to be absolute to stay at bottom but may need relative to be animated?-->
+    <div id="movingtow" style="display:none;"> <!--needs to be absolute to stay at bottom but may need relative to be animated?-->
         <img id="lplayer" class="stfigure" src="https://dezov.s3.amazonaws.com/media/stick-figure-standing-png275-44ca-8060-a115068dc071.png">
         <img id="rope" src="https://www.bulkhempwarehouse.com/product_images/uploaded_images/hemp-rope-long-line.png">
         <img id="rplayer" class="stfigure" src="https://dezov.s3.amazonaws.com/media/stick-figure-standing-png275-44ca-8060-a115068dc071.png">
     </div>
-    <div id="line"></div>
-    <div id="countdown" class="center"></div>
+    <div id="line" style="display:none;"></div>
+    <div id="countdown" class="center" style="display:none;"></div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="tow_script.js"></script>
