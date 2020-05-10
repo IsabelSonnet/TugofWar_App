@@ -7,40 +7,40 @@ $(document).ready(() => {
     let $rplayer = $("#rplayer");
     let $lplayer = $("#lplayer");
 
+    showGame();
+
     $(document).keydown(function (event) {
         switch (event.which) {
             case 37:
                 $(mtow).finish().animate({
                     left: "-=20"
                 });
-                if (collision($rplayer, $line) == true) {
-                    $("#lwinner").show();
-                    console.log("collision!");
-                    hideGame();
-                } else {
-                    console.log("no collision!");
-                    $("#lwinner").hide();
-                    showGame();
-                }
+//                if (collision($rplayer, $line) == true) {
+//                    $("#lwinner").show();
+//                    console.log("collision!");
+//                    hideGame();
+//                } else {
+//                    console.log("no collision!");
+//                    $("#lwinner").hide();
+//                    showGame();
+//                }
                 break;
             case 39:
                 $(mtow).finish().animate({
                     left: "+=20"
                 });
-                if (collision($lplayer, $line) == true) {
-                    $("#rwinner").show();
-                    console.log("collision!");
-                    hideGame();
-                } else {
-                    console.log("no collision!");
-                    $("#rwinner").hide();
-                    showGame();
-                }
+//                if (collision($lplayer, $line) == true) {
+//                    $("#rwinner").show();
+//                    console.log("collision!");
+//                    hideGame();
+//                } else {
+//                    console.log("no collision!");
+//                    $("#rwinner").hide();
+//                    showGame();
+//                }
                 break;
         }
     });
-
-<<<<<<< HEAD
 
 
     $(document).keydown(function (event) {
@@ -69,7 +69,27 @@ $(document).ready(() => {
         console.log("checking if right has lost")
         console.log("tow right: ", m.position().left + m.width(), " player width: ", p.width(),  " line: ", l, " difference: ", ( m.position().left + m.width() -p.width()) - l)
         if (( m.position().left + m.width() -p.width()) < (l.position().left+(0.5*l.width())))
-=======
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
+    function hasLeftLost(m, p, l) {
+        console.log("checking if left has lost")
+        console.log("tow left: ", m.position().left, " player width: ", p.width(),  " line: ", l, "difference: ", (m.position().left + p.width()) - l)
+        if (( m.position().left + p.width())  > (l.position().left+(0.5*l.width())))
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     $("#startGame").click(function () {
         $("#instructions").hide();
         showGame();
@@ -93,38 +113,12 @@ $(document).ready(() => {
         $("#countdown").show();
     }
 
-    function collision(p, l) {
-        if (p.position().left < l.position().left + l.width() &&
-            p.position().left + p.width() > l.position().left &&
-            p.position().top < l.position().top + l.height() &&
-            p.position().top + p.height() > l.position().top)
->>>>>>> origin/master
-        {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
-<<<<<<< HEAD
-    function hasLeftLost(m, p, l) {
-        console.log("checking if left has lost")
-        console.log("tow left: ", m.position().left, " player width: ", p.width(),  " line: ", l, "difference: ", (m.position().left + p.width()) - l)
-        if (( m.position().left + p.width())  > (l.position().left+(0.5*l.width())))
-        {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
 
 
 
     var remaining = 40;
-=======
-    var remaining = 40; //we need to find a way to wait to start the timer until the start game button is pressed and finish when the collision happens
->>>>>>> origin/master
     var timer = setInterval(function () {
         if (remaining <= 0) {
         clearInterval(timer);
