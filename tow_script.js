@@ -42,7 +42,11 @@ $(document).ready(() => {
         console.log($rplayer)
         console.log($lplayer)
 
+<<<<<<< HEAD
         if (hasRightLost($mtow, $rplayer, $line) == true) {
+=======
+        if (hasRightLost($mtow, $rplayer, 400) == true) {
+>>>>>>> origin/master
             console.log("collision!");
             $("#lwinner").show();
             $("#rwinner").hide();
