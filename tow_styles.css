@@ -94,17 +94,11 @@ body {
     position: absolute;
     bottom: 0;
     left: 32%;
-    border-style: dashed; /*get rid of */
-    border-color: blue; /*get rid of */
-    border-width: 3px; /*get rid of */
 }
 
 .stfigure {
     width: 100px;
     height: 100px;
-    border-style: dashed; /*get rid of */
-    border-width: 2px; /*get rid of */
-    border-color: aquamarine; /*get rid of */
 }
 
 #rope {
