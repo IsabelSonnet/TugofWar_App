@@ -42,28 +42,24 @@ $(document).ready(() => {
         console.log($rplayer)
         console.log($lplayer)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (hasRightLost($mtow, $rplayer, $line) == true) {
-=======
-        if (hasRightLost($mtow, $rplayer, 400) == true) {
->>>>>>> origin/master
-=======
-        if (hasRightLost($mtow, $rplayer, $line) == true) {
->>>>>>> origin/master
             console.log("collision!");
             $("#lwinner").show();
             $("#rwinner").hide();
+            hideGame();
         } else {
             console.log("no collision!");
+            showGame();
         }
 
         if (hasLeftLost($mtow, $lplayer, $line) == true) {
             console.log("collision!");
             $("#rwinner").show();
             $("#lwinner").hide();
+            hideGame();
         } else {
             console.log("no collision!");
+            showGame();
         }
     });
 
