@@ -5,6 +5,13 @@ $(document).ready(() => {
     let $rplayer = $("#rplayer");
     let $lplayer = $("#lplayer");
 
+    let $ep1 = $("#ep1");
+    let $ep2 = $("#ep2");
+    let $ep3 = $("#ep3");
+    let $ep8 = $("#ep8");
+    let $ep9 = $("#ep9");
+    let $ep0 = $("#ep0");
+
     let $half = ($(document).width())/2
 
     $(document).keydown(function (event) {
@@ -19,6 +26,18 @@ $(document).ready(() => {
                     left: "+=20"
                 });
                 break;
+            case 49: //1
+                $mtow.prepend($ep1);
+            case 50: //2
+                $mtow.prepend($ep2);
+            case 51: //3
+                $mtow.prepend($ep3);
+            case 56: //8
+                $mtow.append($ep8);
+            case 57: //9
+                $mtow.append($ep9);
+            case 48: //0
+                $mtow.append($ep0);
         }
     });
 
