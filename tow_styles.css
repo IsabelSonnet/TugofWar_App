@@ -103,6 +103,11 @@ body {
     height: 100px;
 }
 
+.ep {
+    width: 75px;
+    height: 75px;
+}
+
 #rope {
     width: 300px;
     height: 26px;
