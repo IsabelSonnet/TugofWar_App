@@ -37,28 +37,38 @@ body {
     color: white;
 }
 
+#lscore {
+    margin-left: 15%;
+    align-content: center;
+    text-align: left;
+    float: left;
+}
+
+#rscore {
+    margin-left: 40%;
+    align-content: center;
+    text-align: left;
+    float: left;
+}
+
 #Lscore {
-    width: 40%;
-    height: 40%;
-    margin-left: 2%;
-    border-style: solid;
-    border-color: white;
-    border-width: 0.5%;
-    text-align: center;
     position: absolute;
     background: red;
+    width: 40%;
+    height: 40%;
+    margin-left: 5%;
+    text-align: center;
+    float: left;
 }
 
 #Rscore {
+    position: absolute;
+    background: red;
     width: 40%;
     height: 40%;
     margin-left: 55%;
-    border-style: solid;
-    border-color: white;
-    border-width: 0.5%;
     text-align: center;
-    position: absolute;
-    background: red;
+    float: left;
 }
 
 #extrapl {
@@ -130,6 +140,7 @@ body {
     width: 10%;
     border: 5px solid red;
     background: orange;
+    text-align: center;
 }
 
 .big {

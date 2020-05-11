@@ -66,6 +66,11 @@ $(document).ready(() => {
         }
     });
 
+    let $lscore = 0;
+    let $rscore = 0;
+    $("#rscore").html("Right:<br>" + $rscore);
+    $("#lscore").html("Left:<br>" + $lscore);
+
     $(document).keydown(function (event) {
         console.log($rplayer)
         console.log($lplayer)
@@ -118,7 +123,9 @@ $(document).ready(() => {
         showGame();
     });
 
-    $("#restart")
+//    $(".restart").click(function () {
+//
+//    });
 
     function hideGame() {
         $("#extrapr").hide();
