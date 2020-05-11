@@ -5,10 +5,12 @@ $(document).ready(() => {
     let $rplayer = $("#rplayer");
     let $lplayer = $("#lplayer");
 
+    let $half = ($(document).width())/2
+
     $(document).keydown(function (event) {
         switch (event.which) {
             case 37:
-                $(mtow).finish().animate({
+                $mtow.finish().animate({
                     left: "-=20"
                 });
 //                if (collision($rplayer, $line) == true) {
@@ -22,7 +24,7 @@ $(document).ready(() => {
 //                }
                 break;
             case 39:
-                $(mtow).finish().animate({
+                $mtow.finish().animate({
                     left: "+=20"
                 });
 //                if (collision($lplayer, $line) == true) {
@@ -42,7 +44,7 @@ $(document).ready(() => {
         console.log($rplayer)
         console.log($lplayer)
 
-        if (hasRightLost($mtow, $rplayer, $line) == true) {
+        if (hasRightLost($mtow, $rplayer, $half) == true) {
             console.log("collision!");
             $("#lwinner").show();
             $("#rwinner").hide();
@@ -52,7 +54,7 @@ $(document).ready(() => {
             showGame();
         }
 
-        if (hasLeftLost($mtow, $lplayer, $line) == true) {
+        if (hasLeftLost($mtow, $lplayer, $half) == true) {
             console.log("collision!");
             $("#rwinner").show();
             $("#lwinner").hide();
@@ -64,8 +66,8 @@ $(document).ready(() => {
     });
 
     function hasRightLost(m, p, l) {
-        console.log("checking if right has lost")
-        console.log("tow right: ", m.position().left + m.width(), " player width: ", p.width(),  " line: ", l, " difference: ", ( m.position().left + m.width() -p.width()) - l)
+        console.log("checking if right has lost");
+        console.log("tow right: ", m.position().left + m.width(), " player width: ", p.width(),  " line: ", l, " difference: ", ( m.position().left + m.width() -p.width()) - l);
         if (( m.position().left + m.width() -p.width()) < l)
         {
             return true;
@@ -75,8 +77,8 @@ $(document).ready(() => {
     }
 
     function hasLeftLost(m, p, l) {
-        console.log("checking if left has lost")
-        console.log("tow left: ", m.position().left, " player width: ", p.width(),  " line: ", l, "difference: ", (m.position().left + p.width()) - l)
+        console.log("checking if left has lost");
+        console.log("tow left: ", m.position().left, " player width: ", p.width(),  " line: ", l, "difference: ", (m.position().left + p.width()) - l);
         if (( m.position().left + p.width())  > l)
         {
             return true;
@@ -94,7 +96,7 @@ $(document).ready(() => {
         $("#extrapr").hide();
         $("#extrapl").hide();
         $line.hide();
-        mtow.hide();
+        $mtow.hide();
         $("#scoreboard").hide();
         $("#countdown").hide();
     }
@@ -103,7 +105,7 @@ $(document).ready(() => {
         $("#extrapr").show();
         $("#extrapl").show();
         $line.show();
-        mtow.show();
+        $mtow.show();
         $("#scoreboard").show();
         $("#countdown").show();
     }
