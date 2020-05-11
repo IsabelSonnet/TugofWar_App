@@ -148,7 +148,9 @@ body {
 }
 
 #instructionText {
-    color: white;
+    color: red;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .big2 {
