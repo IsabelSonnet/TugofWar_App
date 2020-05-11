@@ -1,8 +1,6 @@
 $(document).ready(() => {
 
-    var mtow = $("#movingtow");
-
-    let $mtowDiv = $("#movingtow");
+    let $mtow = $("#movingtow");
     let $line = $("#line");
     let $rplayer = $("#rplayer");
     let $lplayer = $("#lplayer");
@@ -27,9 +25,8 @@ $(document).ready(() => {
     $(document).keydown(function (event) {
         console.log($rplayer)
         console.log($lplayer)
-        console.log($lplayer)
 
-        if (hasRightLost($mtowDiv, $rplayer, 400) == true) {
+        if (hasRightLost($mtow, $rplayer, 400) == true) {
             console.log("collision!");
             $("#lwinner").show();
             $("#rwinner").hide();
@@ -37,7 +34,7 @@ $(document).ready(() => {
             console.log("no collision!");
         }
 
-        if (hasLeftLost($mtowDiv, $lplayer, 400) == true) {
+        if (hasLeftLost($mtow, $lplayer, 400) == true) {
             console.log("collision!");
             $("#rwinner").show();
             $("#lwinner").hide();
