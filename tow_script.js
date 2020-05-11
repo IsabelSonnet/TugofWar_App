@@ -16,28 +16,47 @@ $(document).ready(() => {
 
     $(document).keydown(function (event) {
         switch (event.which) {
-            case 37:
+            case 37: //left
                 $mtow.finish().animate({
                     left: "-=20"
                 });
                 break;
-            case 39:
+            case 39: //right
                 $mtow.finish().animate({
                     left: "+=20"
                 });
                 break;
+
             case 49: //1
                 $mtow.prepend($ep1);
+                $mtow.finish().animate({
+                    left: "-=40"
+                });
             case 50: //2
                 $mtow.prepend($ep2);
+                $mtow.finish().animate({
+                    left: "-=40"
+                });
             case 51: //3
                 $mtow.prepend($ep3);
+                $mtow.finish().animate({
+                    left: "-=40"
+                });
             case 56: //8
                 $mtow.append($ep8);
+                $mtow.finish().animate({
+                    left: "+=40"
+                });
             case 57: //9
                 $mtow.append($ep9);
+                $mtow.finish().animate({
+                    left: "+=40"
+                });
             case 48: //0
                 $mtow.append($ep0);
+                $mtow.finish().animate({
+                    left: "+=40"
+                });
         }
     });
 
