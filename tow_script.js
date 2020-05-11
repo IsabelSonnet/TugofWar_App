@@ -112,6 +112,8 @@ $(document).ready(() => {
         showGame();
     });
 
+    $("#restart")
+
     function hideGame() {
         $("#extrapr").hide();
         $("#extrapl").hide();
