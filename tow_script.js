@@ -1,5 +1,7 @@
 $(document).ready(() => {
 
+    let $gamePlay = false;
+
     let $mtow = $("#movingtow");
     let $line = $("#line");
     let $rplayer = $("#rplayer");
@@ -15,54 +17,58 @@ $(document).ready(() => {
     let $half = ($(document).width())/2
 
     $(document).keydown(function (event) {
-        switch (event.which) {
-            case 37: //left
-                $mtow.finish().animate({
-                    left: "-=20"
-                });
-                break;
-            case 39: //right
-                $mtow.finish().animate({
-                    left: "+=20"
-                });
-                break;
+        if ($gamePlay == false) {
+            return;
+        } else {
+            switch (event.which) {
+                case 37: //left
+                    $mtow.finish().animate({
+                        left: "-=20"
+                    });
+                    break;
+                case 39: //right
+                    $mtow.finish().animate({
+                        left: "+=20"
+                    });
+                    break;
 
-            case 49: //1
-                $mtow.prepend($ep1);
-                $mtow.finish().animate({
-                    left: "-=80"
-                });
-                break;
-            case 50: //2
-                $mtow.prepend($ep2);
-                $mtow.finish().animate({
-                    left: "-=80"
-                });
-                break;
-            case 51: //3
-                $mtow.prepend($ep3);
-                $mtow.finish().animate({
-                    left: "-=80"
-                });
-                break;
-            case 56: //8
-                $mtow.append($ep8);
-                $mtow.finish().animate({
-                    left: "+=60"
-                });
-                break;
-            case 57: //9
-                $mtow.append($ep9);
-                $mtow.finish().animate({
-                    left: "+=60"
-                });
-                break;
-            case 48: //0
-                $mtow.append($ep0);
-                $mtow.finish().animate({
-                    left: "+=60"
-                });
-                break;
+                case 49: //1
+                    $mtow.prepend($ep1);
+                    $mtow.finish().animate({
+                        left: "-=80"
+                    });
+                    break;
+                case 50: //2
+                    $mtow.prepend($ep2);
+                    $mtow.finish().animate({
+                        left: "-=80"
+                    });
+                    break;
+                case 51: //3
+                    $mtow.prepend($ep3);
+                    $mtow.finish().animate({
+                        left: "-=80"
+                    });
+                    break;
+                case 56: //8
+                    $mtow.append($ep8);
+                    $mtow.finish().animate({
+                        left: "+=60"
+                    });
+                    break;
+                case 57: //9
+                    $mtow.append($ep9);
+                    $mtow.finish().animate({
+                        left: "+=60"
+                    });
+                    break;
+                case 48: //0
+                    $mtow.append($ep0);
+                    $mtow.finish().animate({
+                        left: "+=60"
+                    });
+                    break;
+            }
         }
     });
 
@@ -72,35 +78,41 @@ $(document).ready(() => {
     $("#lscore").html("Left:<br><b>" + $lscore + "</b>");
 
     $(document).keydown(function (event) {
-        console.log($rplayer)
-        console.log($lplayer)
-
-        if (hasRightLost($mtow, $rplayer, $half) == true) {
-            console.log("collision!");
-            $("#lwinner").show();
-            $("#rwinner").hide();
-            hideGame();
-            $lscore = $lscore +1;
-            console.log($lscore);
-            console.log($rscore);
-            $(".score").html($lscore + " : " + $rscore);
+        if ($gamePlay == false) {
+            return;
         } else {
-            console.log("no collision!");
-            showGame();
-        }
+            console.log($rplayer)
+            console.log($lplayer)
 
-        if (hasLeftLost($mtow, $lplayer, $half) == true) {
-            console.log("collision!");
-            $("#rwinner").show();
-            $("#lwinner").hide();
-            hideGame();
-            $rscore = $rscore +1;
-            console.log($lscore);
-            console.log($rscore);
-            $(".score").html($lscore + " : " + $rscore);
-        } else {
-            console.log("no collision!");
-            showGame();
+            if (hasRightLost($mtow, $rplayer, $half) == true) {
+                console.log("collision!");
+                $("#lwinner").show();
+                $("#rwinner").hide();
+                hideGame();
+                $lscore = $lscore + 1;
+                console.log($lscore);
+                console.log($rscore);
+                $(".score").html($lscore + " : " + $rscore);
+                $gamePlay = false;
+            } else {
+                console.log("no collision!");
+                showGame();
+            }
+
+            if (hasLeftLost($mtow, $lplayer, $half) == true) {
+                console.log("collision!");
+                $("#rwinner").show();
+                $("#lwinner").hide();
+                hideGame();
+                $rscore = $rscore + 1;
+                console.log($lscore);
+                console.log($rscore);
+                $(".score").html($lscore + " : " + $rscore);
+                $gamePlay = false;
+            } else {
+                console.log("no collision!");
+                showGame();
+            }
         }
     });
 
@@ -129,6 +141,7 @@ $(document).ready(() => {
     $("#startGame").click(function () {
         $("#instructions").hide();
         showGame();
+        $gamePlay = true;
     });
 
     $(".restart").click(function () {
@@ -138,6 +151,7 @@ $(document).ready(() => {
         $("#rscore").html("Right:<br><b>" + $rscore + "</b>");
         $("#lscore").html("Left:<br><b>" + $lscore + "</b>");
         $mtow.css("left", "32%");
+        $gamePlay = true;
     });
 
     function hideGame() {
