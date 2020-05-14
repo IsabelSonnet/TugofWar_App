@@ -68,8 +68,8 @@ $(document).ready(() => {
 
     let $lscore = 0;
     let $rscore = 0;
-    $("#rscore").html("Right:<br>" + $rscore);
-    $("#lscore").html("Left:<br>" + $lscore);
+    $("#rscore").html("Right:<br><b>" + $rscore + "</b>");
+    $("#lscore").html("Left:<br><b>" + $lscore + "</b>");
 
     $(document).keydown(function (event) {
         console.log($rplayer)
@@ -80,6 +80,10 @@ $(document).ready(() => {
             $("#lwinner").show();
             $("#rwinner").hide();
             hideGame();
+            $lscore = $lscore +1;
+            console.log($lscore);
+            console.log($rscore);
+            $(".score").html($lscore + " : " + $rscore);
         } else {
             console.log("no collision!");
             showGame();
@@ -90,6 +94,10 @@ $(document).ready(() => {
             $("#rwinner").show();
             $("#lwinner").hide();
             hideGame();
+            $rscore = $rscore +1;
+            console.log($lscore);
+            console.log($rscore);
+            $(".score").html($lscore + " : " + $rscore);
         } else {
             console.log("no collision!");
             showGame();
@@ -123,9 +131,14 @@ $(document).ready(() => {
         showGame();
     });
 
-//    $(".restart").click(function () {
-//
-//    });
+    $(".restart").click(function () {
+        showGame();
+        $("#lwinner").hide();
+        $("#rwinner").hide();
+        $("#rscore").html("Right:<br><b>" + $rscore + "</b>");
+        $("#lscore").html("Left:<br><b>" + $lscore + "</b>");
+        $mtow.css("left", "32%");
+    });
 
     function hideGame() {
         $("#extrapr").hide();
