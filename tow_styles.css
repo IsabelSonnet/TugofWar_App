@@ -37,38 +37,22 @@ body {
     color: white;
 }
 
-#lscore {
-    margin-left: 15%;
-    align-content: center;
-    text-align: left;
-    float: left;
-}
-
-#rscore {
-    margin-left: 40%;
-    align-content: center;
-    text-align: left;
-    float: left;
-}
-
 #Lscore {
-    position: absolute;
-    background: red;
     width: 40%;
     height: 40%;
     margin-left: 5%;
     text-align: center;
-    float: left;
+    position: absolute;
+    background: red;
 }
 
 #Rscore {
-    position: absolute;
-    background: red;
     width: 40%;
     height: 40%;
     margin-left: 55%;
     text-align: center;
-    float: left;
+    position: absolute;
+    background: red;
 }
 
 #extrapl {
