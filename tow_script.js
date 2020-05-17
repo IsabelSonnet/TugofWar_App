@@ -161,12 +161,14 @@ $(document).ready(() => {
     }
 
     $("#startGame").click(function () {
+        remaining = 40;
         $("#instructions").hide();
         showGame();
         $gamePlay = true;
     });
 
     $(".restart").click(function () {
+        remaining = 40;
         showGame();
         $("#lwinner").hide();
         $("#rwinner").hide();
@@ -192,7 +194,6 @@ $(document).ready(() => {
     }
 
     function showGame() {
-        remaining = 40;
         $("#extrapr").show();
         $("#extrapl").show();
         $line.show();
