@@ -1,6 +1,7 @@
 $(document).ready(() => {
 
     let $gamePlay = false;
+    let $miniGamePlay = false;
 
     let $mtow = $("#movingtow");
     let $line = $("#line");
@@ -71,6 +72,24 @@ $(document).ready(() => {
             }
         }
     });
+
+//    $(document).keydown(function (event) {
+//        if ($miniGamePlay == false) {
+//            return;
+//        } else {
+//            switch (event.which) {
+//                case 37: //left
+//                    $mtow.finish().animate({
+//                        left: "-=20"
+//                    });
+//                    break;
+//                case 39: //right
+//                    $mtow.finish().animate({
+//                        left: "+=20"
+//                    });
+//                    break;
+//        }
+//    });
 
     let $lscore = 0;
     let $rscore = 0;
