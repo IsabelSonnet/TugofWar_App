@@ -116,6 +116,14 @@ body {
     background: gold;
 }
 
+.nwinner {
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: red;
+}
+
 .center{
     position: absolute;
     margin-left: 45%;

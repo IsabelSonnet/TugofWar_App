@@ -176,7 +176,8 @@ $(document).ready(() => {
     var timer = setInterval(function () {
         if (remaining <= 0) {
         clearInterval(timer);
-        document.getElementById("countdown").alert = "Finished";
+        document.getElementById("nwinner").removeClass = "countdown";
+        document.getElementById("nwinner").addClass = "nwinner";
         } else {
         document.getElementById("countdown").innerHTML = remaining + " seconds left";
         }
