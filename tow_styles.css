@@ -142,6 +142,13 @@ body {
     padding: 10%;
 }
 
+.xl {
+    font-size: xx-large;
+    color: lawngreen;
+    font-weight: bold;
+    padding: 10%;
+}
+
 .red {
     color: red;
 }
