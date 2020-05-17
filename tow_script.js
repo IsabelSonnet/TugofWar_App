@@ -15,6 +15,9 @@ $(document).ready(() => {
     let $ep9 = $("#ep9");
     let $ep0 = $("#ep0");
 
+    let lep = 1;
+    let rep = 1;
+
     let $half = ($(document).width())/2
 
     $(document).keydown(function (event) {
