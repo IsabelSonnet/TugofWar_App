@@ -150,7 +150,7 @@ $(document).ready(() => {
         $("#rwinner").hide();
         $("#rscore").html("Right:<br><b>" + $rscore + "</b>");
         $("#lscore").html("Left:<br><b>" + $lscore + "</b>");
-        $mtow.css("left", "32%");
+        $mtow.css("left", "34%");
         $gamePlay = true;
     });
 
@@ -177,8 +177,11 @@ $(document).ready(() => {
         if (remaining <= 1) {
         clearInterval(timer);
         hideGame();
+<<<<<<< HEAD
         showDraw();
 
+=======
+>>>>>>> origin/master
         } else {
         document.getElementById("countdown").innerHTML = remaining + " seconds left";
         }
