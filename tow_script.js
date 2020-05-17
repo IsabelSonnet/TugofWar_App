@@ -202,7 +202,7 @@ $(document).ready(() => {
         document.getElementById("countdown").innerHTML = remaining + " seconds left";
         }
         remaining -= 1;
-    }, 100);
+    }, 1000);
 
 
     function showDraw() {
