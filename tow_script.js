@@ -183,6 +183,7 @@ $(document).ready(() => {
     }
 
     function showGame() {
+        remaining = 40;
         $("#extrapr").show();
         $("#extrapl").show();
         $line.show();
@@ -207,5 +208,17 @@ $(document).ready(() => {
 
     function showDraw() {
         $("#nwinner").show();
+
+    }
+    var timeLeft = 13.6783;
+    var miniTimer = setInterval2(function () {
+        if (remaining <= 1) {
+        clearInterval(timer);
+        hideGame();
+        showGreen();
+    }
+
+    function showGreen() {
+        $("#showgreen").show();
     }
 });
