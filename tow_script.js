@@ -150,7 +150,7 @@ $(document).ready(() => {
         $("#rwinner").hide();
         $("#rscore").html("Right:<br><b>" + $rscore + "</b>");
         $("#lscore").html("Left:<br><b>" + $lscore + "</b>");
-        $mtow.css("left", "32%");
+        $mtow.css("left", "34%");
         $gamePlay = true;
     });
 

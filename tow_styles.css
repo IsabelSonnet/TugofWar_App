@@ -89,15 +89,10 @@ body {
     z-index: 3;
     position: absolute;
     bottom: 0;
-    left: 32%;
+    left: 34%;
 }
 
 .stfigure {
-    width: 100px;
-    height: 100px;
-}
-
-.ep {
     width: 75px;
     height: 75px;
 }
