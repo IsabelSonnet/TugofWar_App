@@ -174,12 +174,12 @@ $(document).ready(() => {
         $("#lscore").html("Left:<br><b>" + $lscore + "</b>");
         $mtow.css("left", "34%");
         $gamePlay = true;
-        ("#extrapl").append($ep1);
-        ("#extrapl").append($ep2);
-        ("#extrapl").append($ep3);
-        ("#extrapr").append($ep8);
-        ("#extrapr").append($ep9);
-        ("#extrapr").append($ep0);
+        $("#extrapl").append($ep1);
+        $("#extrapl").append($ep2);
+        $("#extrapl").append($ep3);
+        $("#extrapr").append($ep8);
+        $("#extrapr").append($ep9);
+        $("#extrapr").append($ep0);
     });
 
     function hideGame() {
