@@ -212,10 +212,27 @@ $(document).ready(() => {
         document.getElementById("countdown").innerHTML = remaining + " seconds left";
         }
         remaining -= 1;
-    }, 1000);
+    }, 100);
 
 
     function showDraw() {
         $("#nwinner").show();
+
+    }
+    var timeLeft = 3;
+    var miniTimer = setInterval2(function () {
+        if (remaining <= 1) {
+        hideGame();
+        showGreen();
+        }else{
+        return;
+        }
+        remaining -= 1;
+    }, 1000);
+
+
+    function showGreen() {
+        $("#showgreen").show();
+
     }
 });
