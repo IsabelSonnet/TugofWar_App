@@ -8,15 +8,15 @@ $(document).ready(() => {
     let $rplayer = $("#rplayer");
     let $lplayer = $("#lplayer");
 
+    let $rteam = $("#rteam");
+    let $lteam = $("#lteam");
+
     let $ep1 = $("#ep1");
     let $ep2 = $("#ep2");
     let $ep3 = $("#ep3");
     let $ep8 = $("#ep8");
     let $ep9 = $("#ep9");
     let $ep0 = $("#ep0");
-
-    let lep = 1;
-    let rep = 1;
 
     let $half = ($(document).width())/2
 
@@ -37,37 +37,37 @@ $(document).ready(() => {
                     break;
 
                 case 49: //1
-                    $mtow.prepend($ep1);
+                    $lteam.append($ep1);
                     $mtow.finish().animate({
                         left: "-=80"
                     });
                     break;
                 case 50: //2
-                    $mtow.prepend($ep2);
+                    $lteam.append($ep2);
                     $mtow.finish().animate({
                         left: "-=80"
                     });
                     break;
                 case 51: //3
-                    $mtow.prepend($ep3);
+                    $lteam.append($ep3);
                     $mtow.finish().animate({
                         left: "-=80"
                     });
                     break;
                 case 56: //8
-                    $mtow.append($ep8);
+                    $rteam.append($ep8);
                     $mtow.finish().animate({
                         left: "+=60"
                     });
                     break;
                 case 57: //9
-                    $mtow.append($ep9);
+                    $rteam.append($ep9);
                     $mtow.finish().animate({
                         left: "+=60"
                     });
                     break;
                 case 48: //0
-                    $mtow.append($ep0);
+                    $rteam.append($ep0);
                     $mtow.finish().animate({
                         left: "+=60"
                     });
@@ -106,7 +106,7 @@ $(document).ready(() => {
             console.log($rplayer)
             console.log($lplayer)
 
-            if (hasRightLost($mtow, $rplayer, $half) == true) {
+            if (hasRightLost($mtow, $rteam, $half) == true) {
                 console.log("collision!");
                 $("#lwinner").show();
                 $("#rwinner").hide();
@@ -121,7 +121,7 @@ $(document).ready(() => {
                 showGame();
             }
 
-            if (hasLeftLost($mtow, $lplayer, $half) == true) {
+            if (hasLeftLost($mtow, $lteam, $half) == true) {
                 console.log("collision!");
                 $("#rwinner").show();
                 $("#lwinner").hide();
@@ -174,6 +174,12 @@ $(document).ready(() => {
         $("#lscore").html("Left:<br><b>" + $lscore + "</b>");
         $mtow.css("left", "34%");
         $gamePlay = true;
+        ("#extrapl").append($ep1);
+        ("#extrapl").append($ep2);
+        ("#extrapl").append($ep3);
+        ("#extrapr").append($ep8);
+        ("#extrapr").append($ep9);
+        ("#extrapr").append($ep0);
     });
 
     function hideGame() {
