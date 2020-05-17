@@ -177,11 +177,8 @@ $(document).ready(() => {
         if (remaining <= 1) {
         clearInterval(timer);
         hideGame();
-<<<<<<< HEAD
         showDraw();
-
-=======
->>>>>>> origin/master
+        $gamePlay = false;
         } else {
         document.getElementById("countdown").innerHTML = remaining + " seconds left";
         }
