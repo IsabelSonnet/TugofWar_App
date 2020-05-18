@@ -82,14 +82,10 @@ $(document).ready(() => {
 //        } else {
 //            switch (event.which) {
 //                case 37: //left
-//                    $mtow.finish().animate({
-//                        left: "-=20"
-//                    });
+//
 //                    break;
 //                case 39: //right
-//                    $mtow.finish().animate({
-//                        left: "+=20"
-//                    });
+//
 //                    break;
 //        }
 //    });
@@ -209,6 +205,7 @@ $(document).ready(() => {
         hideGame();
         showDraw();
         $gamePlay = false;
+        $miniGamePlay = true;
         } else {
         document.getElementById("countdown").innerHTML = remaining + " seconds left";
         }
