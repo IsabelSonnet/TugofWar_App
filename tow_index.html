@@ -8,7 +8,7 @@
 
     <div id="instructions" class="winner">
         <p class="big2">WELCOME TO EXTREME TUG OF WAR!</p>
-        <p id="instructionText">To win the game, use your arrow key to pull the other player across the line. The right player uses the right arrow key and the left player uses the left arrow key. Keep the timer in mind, you don't want your time to run out! To begin the game, hit the button below.<br><br><br>
+        <p id="instructionText">To win the game, use your arrow key to pull the other player across the line. The right player uses the right arrow key and the left player uses the left arrow key. Keep the timer in mind, you don't want your time to run out! To begin the game, hit the button below.<br><br><br> <!--add watch out for tizzy?-->
             விளையாட்டை வெல்ல, உங்கள் அம்பு விசையைப் பயன்படுத்தி மற்ற வீரரை கோடு முழுவதும் இழுக்கவும். வலது பிளேயர் வலது அம்பு விசையைப் பயன்படுத்துகிறார், இடது பிளேயர் இடது அம்பு விசையைப் பயன்படுத்துகிறார். டைமரை மனதில் கொள்ளுங்கள், உங்கள் நேரம் முடிந்துவிட விரும்பவில்லை! விளையாட்டைத் தொடங்க, கீழே உள்ள பொத்தானை அழுத்தவும். <br><br><br>
             ጨዋታውን ለማሸነፍ ሌላውን ተጫዋች በመስመሩ ላይ ለመጎተት የቀስት ቁልፍዎን ይጠቀሙ። የቀኝ ማጫወቻ የቀኝ ቀስት ቁልፉን ይጠቀማል እና የግራ አጫዋቹ የግራ ቀስት ቁልፉን ይጠቀማል። ሰዓት ቆጣሪውን ልብ ይበሉ ፣ ጊዜዎ እንዲጠናቀቁ አይፈልጉም! ጨዋታውን ለመጀመር ከታች ያለውን ቁልፍ ይምቱ።
         </p>
@@ -23,6 +23,24 @@
     </div>
     <div id="rwinner" class="winner" style="display:none;">
         <p class="big">Right Wins!</p>
+        <p class="red">The score is:</p>
+        <p class="score"></p>
+        <p class="red">To start the next round, press the button.</p>
+        <button class="restart">Play Again</button>
+    </div>
+    <div id="ltizzy" class="tizzy" style="display:none;">
+        <p class="big">Uh Oh...<br>
+            TIZZY STRIKES!!!<br>
+            Left Wins!</p>
+        <p class="red">The score is:</p>
+        <p class="score"></p>
+        <p class="red">To start the next round, press the button.</p>
+        <button class="restart">Play Again</button>
+    </div>
+    <div id="rtizzy" class="tizzy" style="display:none;">
+        <p class="big">Uh Oh...<br>
+            TIZZY STRIKES!!!<br>
+            Right Wins!</p>
         <p class="red">The score is:</p>
         <p class="score"></p>
         <p class="red">To start the next round, press the button.</p>
@@ -58,7 +76,6 @@
         <img id="ep0" class="stfigure" src="https://dezov.s3.amazonaws.com/media/stick-figure-standing-png275-44ca-8060-a115068dc071.png" alt="ep0">
     </div>
     <div id="movingtow" style="display:none;">
-        <!--needs to be absolute to stay at bottom but may need relative to be animated?-->
         <span id="lteam">
             <img id="lplayer" class="stfigure" src="https://dezov.s3.amazonaws.com/media/stick-figure-standing-png275-44ca-8060-a115068dc071.png">
         </span>

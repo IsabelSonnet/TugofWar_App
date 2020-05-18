@@ -111,6 +111,14 @@ body {
     background: gold;
 }
 
+.tizzy {
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: purple;
+}
+
 .nwinner {
     z-index: 4;
     width: 100%;

@@ -39,19 +39,19 @@ $(document).ready(() => {
                 case 49: //1
                     $lteam.append($ep1);
                     $mtow.finish().animate({
-                        left: "-=80"
+                        left: "-=100"
                     });
                     break;
                 case 50: //2
                     $lteam.append($ep2);
                     $mtow.finish().animate({
-                        left: "-=80"
+                        left: "-=100"
                     });
                     break;
                 case 51: //3
                     $lteam.append($ep3);
                     $mtow.finish().animate({
-                        left: "-=80"
+                        left: "-=100"
                     });
                     break;
                 case 56: //8
@@ -164,20 +164,24 @@ $(document).ready(() => {
     });
 
     $(".restart").click(function () {
-        remaining = 40;
-        showGame();
-        $("#lwinner").hide();
-        $("#rwinner").hide();
-        $("#rscore").html("Right:<br><b>" + $rscore + "</b>");
-        $("#lscore").html("Left:<br><b>" + $lscore + "</b>");
-        $mtow.css("left", "34%");
-        $gamePlay = true;
-        $("#extrapl").append($ep1);
-        $("#extrapl").append($ep2);
-        $("#extrapl").append($ep3);
-        $("#extrapr").append($ep8);
-        $("#extrapr").append($ep9);
-        $("#extrapr").append($ep0);
+//        if ($rscore + $lscore == 33) {
+//            Tizzy();
+//        } else {
+            remaining = 40;
+            showGame();
+            $("#lwinner").hide();
+            $("#rwinner").hide();
+            $("#rscore").html("Right:<br><b>" + $rscore + "</b>");
+            $("#lscore").html("Left:<br><b>" + $lscore + "</b>");
+            $mtow.css("left", "34%");
+            $gamePlay = true;
+            $("#extrapl").append($ep1);
+            $("#extrapl").append($ep2);
+            $("#extrapl").append($ep3);
+            $("#extrapr").append($ep8);
+            $("#extrapr").append($ep9);
+            $("#extrapr").append($ep0);
+//        }
     });
 
     function hideGame() {
@@ -233,4 +237,27 @@ $(document).ready(() => {
         $("#showgreen").show();
 
     }
+
+//    function Tizzy() {
+//        let ranNum = Math.random();
+//        if (ranNum > 0.5) {
+//            $("#ltizzy").show();
+//            hideGame();
+//            $lscore = $lscore + 1;
+//            console.log($lscore);
+//            console.log($rscore);
+//            $(".score").html($lscore + " : " + $rscore);
+//            $gamePlay = false;
+//        } else {
+//            console.log("collision!");
+//            $("#rtizzy").show();
+//            hideGame();
+//            $rscore = $rscore + 1;
+//            console.log($lscore);
+//            console.log($rscore);
+//            $(".score").html($lscore + " : " + $rscore);
+//            $gamePlay = false;
+//        }
+//    }
+
 });
