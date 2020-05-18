@@ -18,7 +18,7 @@ $(document).ready(() => {
     let $ep9 = $("#ep9");
     let $ep0 = $("#ep0");
 
-    let $half = ($(document).width())/2
+    let $half = ($(document).width())/2;
 
     $(document).keydown(function (event) {
         if ($gamePlay == false) {
@@ -76,19 +76,19 @@ $(document).ready(() => {
         }
     });
 
-//    $(document).keydown(function (event) {
-//        if ($miniGamePlay == false) {
-//            return;
-//        } else {
-//            switch (event.which) {
-//                case 37: //left
-//
-//                    break;
-//                case 39: //right
-//
-//                    break;
-//        }
-//    });
+    $(document).keydown(function (event) {
+        if ($miniGamePlay == false) {
+            return;
+        } else {
+            switch (event.which) {
+                case 37: //left
+
+                    break;
+                case 39: //right
+
+                    break;
+        }}
+    });
 
     let $lscore = 0;
     let $rscore = 0;
@@ -99,8 +99,8 @@ $(document).ready(() => {
         if ($gamePlay == false) {
             return;
         } else {
-            console.log($rplayer)
-            console.log($lplayer)
+            console.log($rplayer);
+            console.log($lplayer);
 
             if (hasRightLost($mtow, $rteam, $half) == true) {
                 console.log("collision!");
@@ -164,9 +164,9 @@ $(document).ready(() => {
     });
 
     $(".restart").click(function () {
-//        if ($rscore + $lscore == 33) {
-//            Tizzy();
-//        } else {
+        if ($rscore + $lscore == 33) {
+            Tizzy();
+        } else {
             remaining = 40;
             showGame();
             $("#lwinner").hide();
@@ -181,7 +181,8 @@ $(document).ready(() => {
             $("#extrapr").append($ep8);
             $("#extrapr").append($ep9);
             $("#extrapr").append($ep0);
-//        }
+
+        }
     });
 
     function hideGame() {
@@ -203,61 +204,71 @@ $(document).ready(() => {
     }
 
     var remaining = 40; //we need to find a way to wait to start the timer until the start game button is pressed and finish when the collision happens
-    var timer = setInterval(function () {
+    var timer = setInterval(function onetime() {
         if (remaining <= 1) {
         clearInterval(timer);
         hideGame();
         showDraw();
+        hideGreen();
         $gamePlay = false;
         $miniGamePlay = true;
         } else {
         document.getElementById("countdown").innerHTML = remaining + " seconds left";
         }
         remaining -= 1;
-    }, 1000);
+    }, 100);
 
 
     function showDraw() {
         $("#nwinner").show();
 
     }
-    var timeLeft = 3;
-    var miniTimer = setInterval2(function () {
+    function hideDraw() {
+        $("#nwinner").hide
+    }
+
+    var timeLeft = 20;
+    var miniTimer = setInterval(function twotime() {
         if (remaining <= 1) {
         hideGame();
+        hideDraw();
         showGreen();
         }else{
         return;
         }
-        remaining -= 1;
-    }, 1000);
+        timeLeft -= 1;
+    }, 100);
 
 
     function showGreen() {
         $("#showgreen").show();
-
     }
 
-//    function Tizzy() {
-//        let ranNum = Math.random();
-//        if (ranNum > 0.5) {
-//            $("#ltizzy").show();
-//            hideGame();
-//            $lscore = $lscore + 1;
-//            console.log($lscore);
-//            console.log($rscore);
-//            $(".score").html($lscore + " : " + $rscore);
-//            $gamePlay = false;
-//        } else {
-//            console.log("collision!");
-//            $("#rtizzy").show();
-//            hideGame();
-//            $rscore = $rscore + 1;
-//            console.log($lscore);
-//            console.log($rscore);
-//            $(".score").html($lscore + " : " + $rscore);
-//            $gamePlay = false;
-//        }
-//    }
+    function hideGreen() {
+        $("#showgreen").hide();
+    }
+
+    function Tizzy() {
+        let ranNum = Math.random();
+        if (ranNum > 0.5) {
+            $("#ltizzy").show();
+            hideGame();
+            $lscore = $lscore + 1;
+            console.log($lscore);
+            console.log($rscore);
+            $(".score").html($lscore + " : " + $rscore);
+            $gamePlay = false;
+        } else {
+            console.log("collision!");
+            $("#rtizzy").show();
+            hideGame();
+            $rscore = $rscore + 1;
+            console.log($lscore);
+            console.log($rscore);
+            $(".score").html($lscore + " : " + $rscore);
+            $gamePlay = false;
+        }
+    }
 
 });
+
