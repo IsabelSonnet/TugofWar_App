@@ -83,10 +83,32 @@ $(document).ready(() => {
         } else {
             switch (event.which) {
                 case 37: //left
-
+                    $("#lwinner").show();
+                    $("#rwinner").hide();
+                    hideGame();
+                    $("#nwinner").hide();
+                    $("#showgreen").hide();
+                    $lscore = $lscore + 1;
+                    console.log($lscore);
+                    console.log($rscore);
+                    $(".score").html($lscore + " : " + $rscore);
+                    $gamePlay = false;
+                    $miniGame = false;
+                    $miniGamePlay = false;
                     break;
                 case 39: //right
-
+                    $("#rwinner").show();
+                    $("#lwinner").hide();
+                    hideGame();
+                    $("#nwinner").hide();
+                    $("#showgreen").hide();
+                    $rscore = $rscore + 1;
+                    console.log($lscore);
+                    console.log($rscore);
+                    $(".score").html($lscore + " : " + $rscore);
+                    $gamePlay = false;
+                    $miniGame = false;
+                    $miniGamePlay = false;
                     break;
             }
         }
@@ -95,10 +117,32 @@ $(document).ready(() => {
         } else {
             switch (event.which) {
                 case 37: //left
-
+                    $("#rwinner").show();
+                    $("#lwinner").hide();
+                    hideGame();
+                    $("#nwinner").hide();
+                    $("#showgreen").hide();
+                    $rscore = $rscore + 1;
+                    console.log($lscore);
+                    console.log($rscore);
+                    $(".score").html($lscore + " : " + $rscore);
+                    $gamePlay = false;
+                    $miniGame = false;
+                    $miniGamePlay = false;
                     break;
                 case 39: //right
-
+                    $("#lwinner").show();
+                    $("#rwinner").hide();
+                    hideGame();
+                    $("#nwinner").hide();
+                    $("#showgreen").hide();
+                    $lscore = $lscore + 1;
+                    console.log($lscore);
+                    console.log($rscore);
+                    $(".score").html($lscore + " : " + $rscore);
+                    $gamePlay = false;
+                    $miniGame = false;
+                    $miniGamePlay = false;
                     break;
             }
         }
@@ -122,7 +166,7 @@ $(document).ready(() => {
                 $("#rwinner").hide();
                 hideGame();
                 $("#nwinner").hide();
-                $("#showgreen").hide();;
+                $("#showgreen").hide();
                 $lscore = $lscore + 1;
                 console.log($lscore);
                 console.log($rscore);
@@ -200,7 +244,8 @@ $(document).ready(() => {
             $("#lscore").html("Left:<br><b>" + $lscore + "</b>");
             $mtow.css("left", "34%");
             $miniGamePlay = false;
-            $gamePlay = false;
+            $miniGame = false;
+            $gamePlay = true;
             $("#extrapl").append($ep1);
             $("#extrapl").append($ep2);
             $("#extrapl").append($ep3);
