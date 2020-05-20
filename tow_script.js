@@ -112,6 +112,9 @@ $(document).ready(() => {
                     break;
             }
         }
+    });
+
+    $(document).keydown(function (event) {
         if ($miniGame == false) {
             return;
         } else {
