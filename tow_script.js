@@ -224,7 +224,8 @@ $(document).ready(() => {
             $miniGame = true;
             $miniGamePlay = false;
 
-            setTimeout(miniTimer, 1000);
+            var randTime = (Math.random())*10000 + 15000;
+            setTimeout(miniTimer, randTime);
 
         } else {
             document.getElementById("countdown").innerHTML = remaining + " seconds left";
