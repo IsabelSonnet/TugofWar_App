@@ -8,6 +8,7 @@ $(document).ready(() => {
     let $line = $("#line");
     let $rplayer = $("#rplayer");
     let $lplayer = $("#lplayer");
+    let $fire = $("#fire");
 
     let $rteam = $("#rteam");
     let $lteam = $("#lteam");
@@ -279,7 +280,7 @@ $(document).ready(() => {
             document.getElementById("countdown").innerHTML = remaining + " seconds left";
         }
         remaining -= 1;
-    }, 100);
+    }, 1000);
 
     function miniTimer() {
         hideGame();
@@ -297,6 +298,7 @@ $(document).ready(() => {
         $mtow.hide();
         $("#scoreboard").hide();
         $("#countdown").hide();
+        $("#fire").hide();
     }
 
     function showGame() {
@@ -306,6 +308,7 @@ $(document).ready(() => {
         $mtow.show();
         $("#scoreboard").show();
         $("#countdown").show();
+        $("#fire").show();
     }
 
     function Tizzy() {
