@@ -149,7 +149,9 @@ body {
     font-size: xx-large;
     color: red;
     font-weight: bold;
-    padding: 10%;
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%
 }
 
 .xl {
@@ -194,4 +196,9 @@ body {
     z-index: 4;
     bottom: 0;
     display: inherit;
+}
+
+.tizzyimg {
+    width: 300px;
+    height: 100px;
 }

@@ -225,7 +225,7 @@ $(document).ready(() => {
     }
 
     $("#startGame").click(function () {
-        remaining = 40;
+        remaining = 25;
         $("#instructions").hide();
         showGame();
         $("#nwinner").hide();
@@ -237,7 +237,7 @@ $(document).ready(() => {
         if ($rscore + $lscore == 13 || $rscore + $lscore == 33 || $rscore + $lscore == 56 || $rscore + $lscore == 99) {
             Tizzy();
         } else {
-            remaining = 40;
+            remaining = 25;
             showGame();
             $("#nwinner").hide();
             $("#showgreen").hide();
@@ -262,7 +262,7 @@ $(document).ready(() => {
         }
     });
 
-    var remaining = 40;
+    var remaining = 25;
     var timeLeft = 10;
 
     var timer = setInterval(function onetime() {
@@ -272,8 +272,10 @@ $(document).ready(() => {
             $("#nwinner").show();
             $("#showgreen").hide();
             $gamePlay = false;
-            $miniGame = true;
+            $miniGame = false;
             $miniGamePlay = false;
+
+            setTimeout(keyWorks, 5000);
 
             var randTime = (Math.random()) * 10000 + 15000;
             setTimeout(miniTimer, randTime);
@@ -291,6 +293,10 @@ $(document).ready(() => {
         $gamePlay = false;
         $miniGame = false;
         $miniGamePlay = true;
+    }
+
+    function keyWorks() {
+        $minigame = true;
     }
 
     function hideGame() {
