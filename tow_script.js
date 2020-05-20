@@ -169,13 +169,13 @@ $(document).ready(() => {
         showGame();
         hideDraw();
         hideGreen();
-        $gamePlay = false;
+        $gamePlay = true;
     });
 
     $(".restart").click(function () {
-        if ($rscore + $lscore == 33) {
-            Tizzy();
-        } else {
+//        if ($rscore + $lscore == 33) {
+//            Tizzy();
+//        } else {
             remaining = 40;
             showGame();
             hideDraw();
@@ -194,38 +194,36 @@ $(document).ready(() => {
             $("#extrapr").append($ep9);
             $("#extrapr").append($ep0);
 
-        }
+//        }
     });
 
-    var remaining = 40; //we need to find a way to wait to start the timer until the start game button is pressed and finish when the collision happens
+    var remaining = 40;
+    var timeLeft = 10;
+
     var timer = setInterval(function onetime() {
         if (remaining <= 1) {
             clearInterval(timer);
             hideGame();
-            showDraw();
-            hideGreen();
+            $("#nwinner").show();
+            $("#showgreen").hide();
             $gamePlay = false;
             $miniGamePlay = false;
+
+            setTimeout(miniTimer, 1000);
+
         } else {
             document.getElementById("countdown").innerHTML = remaining + " seconds left";
         }
         remaining -= 1;
     }, 100);
 
-    var timeLeft = 10;
-    var miniTimer = setInterval(function twotime() {
-        if (timeLeft <= 1) {
-            hideGame();
-            hideDraw();
-            showGreen();
-            $gamePlay = false;
-            $miniGamePlay = false;
-        } else {
-            return;
-        }
-        timeLeft -= 1;
-    }, 10);
-
+    function miniTimer() {
+        hideGame();
+        $("#nwinner").hide();
+        $("#showgreen").show();
+        $gamePlay = false;
+        $miniGamePlay = false;
+    }
 
     function hideGame() {
         $("#extrapr").hide();
@@ -243,24 +241,6 @@ $(document).ready(() => {
         $mtow.show();
         $("#scoreboard").show();
         $("#countdown").show();
-    }
-
-
-    function showDraw() {
-        $("#nwinner").show();
-    }
-
-    function hideDraw() {
-        $("#nwinner").hide
-    }
-
-
-    function showGreen() {
-        $("#showgreen").show();
-    }
-
-    function hideGreen() {
-        $("#showgreen").hide();
     }
 
     function Tizzy() {
