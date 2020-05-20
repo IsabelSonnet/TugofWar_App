@@ -98,6 +98,7 @@ body {
 }
 
 #rope {
+    position: absolute;
     width: 300px;
     height: 26px;
     margin-bottom: 37px;
@@ -134,7 +135,7 @@ body {
     background-color: lawngreen;
 }
 
-.center{
+.center {
     position: absolute;
     margin-left: 45%;
     margin-top: 12%;
@@ -162,6 +163,7 @@ body {
 .red {
     color: red;
 }
+
 .score {
     color: white;
     font-weight: bold;
@@ -186,10 +188,11 @@ body {
     color: white;
 }
 
-.fire {
-    width : 100px;
-    height : 100px;
-    z-index: 3.5;
+#fire {
     position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 4;
+    bottom: 0;
+    display: inherit;
 }
-
