@@ -2,6 +2,7 @@ $(document).ready(() => {
 
     let $gamePlay = false;
     let $miniGamePlay = false;
+    let $miniGame = false;
 
     let $mtow = $("#movingtow");
     let $line = $("#line");
@@ -89,6 +90,18 @@ $(document).ready(() => {
                     break;
             }
         }
+        if ($miniGame == false) {
+            return;
+        } else {
+            switch (event.which) {
+                case 37: //left
+
+                    break;
+                case 39: //right
+
+                    break;
+            }
+        }
     });
 
     let $lscore = 0;
@@ -108,8 +121,8 @@ $(document).ready(() => {
                 $("#lwinner").show();
                 $("#rwinner").hide();
                 hideGame();
-                hideDraw();
-                hideGreen();
+                $("#nwinner").hide();
+                $("#showgreen").hide();;
                 $lscore = $lscore + 1;
                 console.log($lscore);
                 console.log($rscore);
@@ -118,8 +131,8 @@ $(document).ready(() => {
             } else {
                 console.log("no collision!");
                 showGame();
-                hideDraw();
-                hideGreen();
+                $("#nwinner").hide();
+                $("#showgreen").hide();
             }
 
             if (hasLeftLost($mtow, $lteam, $half) == true) {
@@ -127,8 +140,8 @@ $(document).ready(() => {
                 $("#rwinner").show();
                 $("#lwinner").hide();
                 hideGame();
-                hideDraw();
-                hideGreen();
+                $("#nwinner").hide();
+                $("#showgreen").hide();
                 $rscore = $rscore + 1;
                 console.log($lscore);
                 console.log($rscore);
@@ -137,8 +150,8 @@ $(document).ready(() => {
             } else {
                 console.log("no collision!");
                 showGame();
-                hideDraw();
-                hideGreen();
+                $("#nwinner").hide();
+                $("#showgreen").hide();
             }
         }
     });
@@ -167,8 +180,8 @@ $(document).ready(() => {
         remaining = 40;
         $("#instructions").hide();
         showGame();
-        hideDraw();
-        hideGreen();
+        $("#nwinner").hide();
+        $("#showgreen").hide();
         $gamePlay = true;
     });
 
@@ -178,8 +191,9 @@ $(document).ready(() => {
 //        } else {
             remaining = 40;
             showGame();
-            hideDraw();
-            hideGreen();
+            $("#nwinner").hide();
+            $("#showgreen").hide();
+
             $("#lwinner").hide();
             $("#rwinner").hide();
             $("#rscore").html("Right:<br><b>" + $rscore + "</b>");
@@ -207,6 +221,7 @@ $(document).ready(() => {
             $("#nwinner").show();
             $("#showgreen").hide();
             $gamePlay = false;
+            $miniGame = true;
             $miniGamePlay = false;
 
             setTimeout(miniTimer, 1000);
@@ -222,7 +237,8 @@ $(document).ready(() => {
         $("#nwinner").hide();
         $("#showgreen").show();
         $gamePlay = false;
-        $miniGamePlay = false;
+        $miniGame = false;
+        $miniGamePlay = true;
     }
 
     function hideGame() {
