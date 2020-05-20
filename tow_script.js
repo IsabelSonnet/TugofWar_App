@@ -18,7 +18,7 @@ $(document).ready(() => {
     let $ep9 = $("#ep9");
     let $ep0 = $("#ep0");
 
-    let $half = ($(document).width())/2;
+    let $half = ($(document).width()) / 2;
 
     $(document).keydown(function (event) {
         if ($gamePlay == false) {
@@ -87,7 +87,8 @@ $(document).ready(() => {
                 case 39: //right
 
                     break;
-        }}
+            }
+        }
     });
 
     let $lscore = 0;
@@ -107,6 +108,8 @@ $(document).ready(() => {
                 $("#lwinner").show();
                 $("#rwinner").hide();
                 hideGame();
+                hideDraw();
+                hideGreen();
                 $lscore = $lscore + 1;
                 console.log($lscore);
                 console.log($rscore);
@@ -115,6 +118,8 @@ $(document).ready(() => {
             } else {
                 console.log("no collision!");
                 showGame();
+                hideDraw();
+                hideGreen();
             }
 
             if (hasLeftLost($mtow, $lteam, $half) == true) {
@@ -122,6 +127,8 @@ $(document).ready(() => {
                 $("#rwinner").show();
                 $("#lwinner").hide();
                 hideGame();
+                hideDraw();
+                hideGreen();
                 $rscore = $rscore + 1;
                 console.log($lscore);
                 console.log($rscore);
@@ -130,15 +137,16 @@ $(document).ready(() => {
             } else {
                 console.log("no collision!");
                 showGame();
+                hideDraw();
+                hideGreen();
             }
         }
     });
 
     function hasRightLost(m, p, l) {
         console.log("checking if right has lost");
-        console.log("tow right: ", m.position().left + m.width(), " player width: ", p.width(),  " line: ", l, " difference: ", ( m.position().left + m.width() -p.width()) - l);
-        if (( m.position().left + m.width() -p.width()) < l)
-        {
+        console.log("tow right: ", m.position().left + m.width(), " player width: ", p.width(), " line: ", l, " difference: ", (m.position().left + m.width() - p.width()) - l);
+        if ((m.position().left + m.width() - p.width()) < l) {
             return true;
         } else {
             return false;
@@ -147,9 +155,8 @@ $(document).ready(() => {
 
     function hasLeftLost(m, p, l) {
         console.log("checking if left has lost");
-        console.log("tow left: ", m.position().left, " player width: ", p.width(),  " line: ", l, "difference: ", (m.position().left + p.width()) - l);
-        if (( m.position().left + p.width())  > l)
-        {
+        console.log("tow left: ", m.position().left, " player width: ", p.width(), " line: ", l, "difference: ", (m.position().left + p.width()) - l);
+        if ((m.position().left + p.width()) > l) {
             return true;
         } else {
             return false;
@@ -160,7 +167,9 @@ $(document).ready(() => {
         remaining = 40;
         $("#instructions").hide();
         showGame();
-        $gamePlay = true;
+        hideDraw();
+        hideGreen();
+        $gamePlay = false;
     });
 
     $(".restart").click(function () {
@@ -169,12 +178,15 @@ $(document).ready(() => {
         } else {
             remaining = 40;
             showGame();
+            hideDraw();
+            hideGreen();
             $("#lwinner").hide();
             $("#rwinner").hide();
             $("#rscore").html("Right:<br><b>" + $rscore + "</b>");
             $("#lscore").html("Left:<br><b>" + $lscore + "</b>");
             $mtow.css("left", "34%");
-            $gamePlay = true;
+            $miniGamePlay = false;
+            $gamePlay = false;
             $("#extrapl").append($ep1);
             $("#extrapl").append($ep2);
             $("#extrapl").append($ep3);
@@ -184,6 +196,36 @@ $(document).ready(() => {
 
         }
     });
+
+    var remaining = 40; //we need to find a way to wait to start the timer until the start game button is pressed and finish when the collision happens
+    var timer = setInterval(function onetime() {
+        if (remaining <= 1) {
+            clearInterval(timer);
+            hideGame();
+            showDraw();
+            hideGreen();
+            $gamePlay = false;
+            $miniGamePlay = false;
+        } else {
+            document.getElementById("countdown").innerHTML = remaining + " seconds left";
+        }
+        remaining -= 1;
+    }, 100);
+
+    var timeLeft = 10;
+    var miniTimer = setInterval(function twotime() {
+        if (timeLeft <= 1) {
+            hideGame();
+            hideDraw();
+            showGreen();
+            $gamePlay = false;
+            $miniGamePlay = false;
+        } else {
+            return;
+        }
+        timeLeft -= 1;
+    }, 10);
+
 
     function hideGame() {
         $("#extrapr").hide();
@@ -203,41 +245,14 @@ $(document).ready(() => {
         $("#countdown").show();
     }
 
-    var remaining = 40; //we need to find a way to wait to start the timer until the start game button is pressed and finish when the collision happens
-    var timer = setInterval(function onetime() {
-        if (remaining <= 1) {
-        clearInterval(timer);
-        hideGame();
-        showDraw();
-        hideGreen();
-        $gamePlay = false;
-        $miniGamePlay = true;
-        } else {
-        document.getElementById("countdown").innerHTML = remaining + " seconds left";
-        }
-        remaining -= 1;
-    }, 100);
-
 
     function showDraw() {
         $("#nwinner").show();
-
     }
+
     function hideDraw() {
         $("#nwinner").hide
     }
-
-    var timeLeft = 20;
-    var miniTimer = setInterval(function twotime() {
-        if (remaining <= 1) {
-        hideGame();
-        hideDraw();
-        showGreen();
-        }else{
-        return;
-        }
-        timeLeft -= 1;
-    }, 100);
 
 
     function showGreen() {
@@ -271,4 +286,3 @@ $(document).ready(() => {
     }
 
 });
-
