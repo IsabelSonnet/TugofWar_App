@@ -189,6 +189,12 @@ body {
 }
 
 #fire {
+<<<<<<< HEAD
+=======
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+>>>>>>> origin/master
     position: absolute;
     width: 100px;
     height: 100px;

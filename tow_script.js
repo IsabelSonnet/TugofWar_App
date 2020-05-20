@@ -234,13 +234,15 @@ $(document).ready(() => {
     });
 
     $(".restart").click(function () {
-//        if ($rscore + $lscore == 33) {
-//            Tizzy();
-//        } else {
+        if ($rscore + $lscore == 13 || $rscore + $lscore == 33 || $rscore + $lscore == 56 || $rscore + $lscore == 99) {
+            Tizzy();
+        } else {
             remaining = 40;
             showGame();
             $("#nwinner").hide();
             $("#showgreen").hide();
+            $("#rtizzy").hide();
+            $("#ltizzy").hide();
 
             $("#lwinner").hide();
             $("#rwinner").hide();
@@ -257,7 +259,7 @@ $(document).ready(() => {
             $("#extrapr").append($ep9);
             $("#extrapr").append($ep0);
 
-//        }
+        }
     });
 
     var remaining = 40;
@@ -273,7 +275,7 @@ $(document).ready(() => {
             $miniGame = true;
             $miniGamePlay = false;
 
-            var randTime = (Math.random())*10000 + 15000;
+            var randTime = (Math.random()) * 10000 + 15000;
             setTimeout(miniTimer, randTime);
 
         } else {
@@ -315,6 +317,8 @@ $(document).ready(() => {
         let ranNum = Math.random();
         if (ranNum > 0.5) {
             $("#ltizzy").show();
+            $("#lwinner").hide();
+            $("#rwinner").hide();
             hideGame();
             $lscore = $lscore + 1;
             console.log($lscore);
@@ -322,8 +326,9 @@ $(document).ready(() => {
             $(".score").html($lscore + " : " + $rscore);
             $gamePlay = false;
         } else {
-            console.log("collision!");
             $("#rtizzy").show();
+            $("#lwinner").hide();
+            $("#rwinner").hide();
             hideGame();
             $rscore = $rscore + 1;
             console.log($lscore);
