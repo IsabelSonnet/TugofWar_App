@@ -134,7 +134,7 @@ body {
     background-color: lawngreen;
 }
 
-.center{
+.center {
     position: absolute;
     margin-left: 45%;
     margin-top: 12%;
@@ -162,6 +162,7 @@ body {
 .red {
     color: red;
 }
+
 .score {
     color: white;
     font-weight: bold;
@@ -186,10 +187,9 @@ body {
     color: white;
 }
 
-.fire {
-    width : 100px;
-    height : 100px;
-    z-index: 3.5;
+#fire {
+    width: 100px;
+    height: 100px;
+    z-index: 1;
     position: absolute;
 }
-
