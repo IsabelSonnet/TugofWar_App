@@ -86,7 +86,7 @@ body {
 }
 
 #movingtow {
-    z-index: 3;
+    z-index: 4;
     position: absolute;
     bottom: 12;
     left: 34%;
@@ -122,18 +122,9 @@ body {
 
 #grass {
     position: absolute;
-    bottom: 0%;
-    z-index: 8;
+    bottom: 0;
+    z-index: 3;
 }
-
-#smlcloud {
-    width: 100px;
-    height: 75px;
-    position: absolute;
-    margin-left: 35%;
-    margin-top: 65%;
-}
-
 .tizzy {
     z-index: 4;
     width: 100%;
@@ -215,4 +206,13 @@ body {
 .tizzyimg {
     width: 300px;
     height: 100px;
+}
+
+#grass1 {
+    position: absolute;
+    left: 0;
+}
+
+#cloud {
+    left: 2%;
 }

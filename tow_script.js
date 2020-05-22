@@ -333,8 +333,7 @@ $(document).ready(() => {
         $("#countdown").hide();
         $("#fire").hide();
         $("#grass").hide();
-        $("#scloud").hide();
-        $("#lcloud").hide();
+        $("#cloud").hide();
     }
 
     function showGame() {
@@ -346,8 +345,7 @@ $(document).ready(() => {
         $("#countdown").show();
         $("#fire").show();
         $("#grass").show();
-        $("#scloud").show();
-        $("#lcloud").show();
+        $("#cloud").show();
     }
 
     function Tizzy() {
