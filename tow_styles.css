@@ -111,6 +111,25 @@ body {
     background: gold;
 }
 
+#fireSize {
+    width: 125px;
+    height: 125px;
+    margin-left: 46%;
+    bottom: 0;
+    position: absolute;
+    z-index: 6;
+}
+
+.grass{
+    fill: mediumseagreen;
+    stroke-width: 3px;
+    stroke: green;
+    right: 0px;
+    bottom: 600px;
+    z-index: 1;
+    background-position: bottom right;
+}
+
 .tizzy {
     z-index: 4;
     width: 100%;
@@ -187,15 +206,6 @@ body {
 #startGame {
     background: red;
     color: white;
-}
-
-#fire {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    z-index: 4;
-    bottom: 0;
-    display: inherit;
 }
 
 .tizzyimg {
