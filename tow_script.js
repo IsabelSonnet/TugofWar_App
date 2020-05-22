@@ -86,6 +86,7 @@ $(document).ready(() => {
                 case 37: //left
                     $("#lwinner").show();
                     $("#rwinner").hide();
+                    clearInterval(timer);
                     hideGame();
                     $("#nwinner").hide();
                     $("#showgreen").hide();
@@ -100,6 +101,7 @@ $(document).ready(() => {
                 case 39: //right
                     $("#rwinner").show();
                     $("#lwinner").hide();
+                    clearInterval(timer);
                     hideGame();
                     $("#nwinner").hide();
                     $("#showgreen").hide();
@@ -123,6 +125,7 @@ $(document).ready(() => {
                 case 37: //left
                     $("#rwinner").show();
                     $("#lwinner").hide();
+                    clearInterval(timer);
                     hideGame();
                     $("#nwinner").hide();
                     $("#showgreen").hide();
@@ -137,6 +140,7 @@ $(document).ready(() => {
                 case 39: //right
                     $("#lwinner").show();
                     $("#rwinner").hide();
+                    clearInterval(timer);
                     hideGame();
                     $("#nwinner").hide();
                     $("#showgreen").hide();
@@ -166,6 +170,7 @@ $(document).ready(() => {
 
             if (hasRightLost($mtow, $rteam, $half) == true) {
                 console.log("collision!");
+                clearInterval(timer);
                 $("#lwinner").show();
                 $("#rwinner").hide();
                 hideGame();
@@ -185,6 +190,7 @@ $(document).ready(() => {
 
             if (hasLeftLost($mtow, $lteam, $half) == true) {
                 console.log("collision!");
+                clearInterval(timer);
                 $("#rwinner").show();
                 $("#lwinner").hide();
                 hideGame();
@@ -225,7 +231,9 @@ $(document).ready(() => {
     }
 
     $("#startGame").click(function () {
+        clearInterval(timer);
         remaining = 25;
+        timer = setInterval(function () { bigTimer() }, 1000);
         $("#instructions").hide();
         showGame();
         $("#nwinner").hide();
@@ -237,7 +245,9 @@ $(document).ready(() => {
         if ($rscore + $lscore == 13 || $rscore + $lscore == 33 || $rscore + $lscore == 56 || $rscore + $lscore == 99) {
             Tizzy();
         } else {
+            clearInterval(timer);
             remaining = 25;
+            timer = setInterval(function () { bigTimer() }, 1000);
             showGame();
             $("#nwinner").hide();
             $("#showgreen").hide();
@@ -263,10 +273,13 @@ $(document).ready(() => {
     });
 
     var remaining = 25;
-    var timeLeft = 10;
-
-    var timer = setInterval(function onetime() {
+    var timer = setInterval(function () { doNothing() }, 1000);
+    function doNothing() {
+        return;
+    }
+    function bigTimer() {
         if (remaining <= 1) {
+            console.log("hey the timer got here");
             clearInterval(timer);
             hideGame();
             $("#nwinner").show();
@@ -284,7 +297,7 @@ $(document).ready(() => {
             document.getElementById("countdown").innerHTML = remaining + " seconds left";
         }
         remaining -= 1;
-    }, 1000);
+    }
 
     function miniTimer() {
         hideGame();
@@ -320,6 +333,7 @@ $(document).ready(() => {
     }
 
     function Tizzy() {
+        clearInterval(timer);
         let ranNum = Math.random();
         if (ranNum > 0.5) {
             $("#ltizzy").show();
