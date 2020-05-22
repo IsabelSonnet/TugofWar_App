@@ -125,6 +125,22 @@ body {
     bottom: 0;
     z-index: 3;
 }
+
+#grass1 {
+    position: absolute;
+    margin-left: 0%;
+}
+
+#grass2 {
+    position: absolute;
+    margin-left: 50%;
+}
+
+#grass3 {
+    position: absolute;
+    margin-left: 80%;
+}
+
 .tizzy {
     z-index: 4;
     width: 100%;
@@ -208,11 +224,7 @@ body {
     height: 100px;
 }
 
-#grass1 {
-    position: absolute;
-    left: 0;
-}
-
 #cloud {
-    left: 2%;
+    position: absolute;
+    margin-left: 5%;
 }
