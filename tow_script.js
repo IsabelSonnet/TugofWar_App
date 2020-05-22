@@ -10,6 +10,9 @@ $(document).ready(() => {
     let $lplayer = $("#lplayer");
     let $fire = $("#fire");
     let $grass = $("#grass");
+    let $scloud = $("#scloud");
+    let $lcloud = $("#lcloud");
+
 
     let $rteam = $("#rteam");
     let $lteam = $("#lteam");
@@ -330,6 +333,8 @@ $(document).ready(() => {
         $("#countdown").hide();
         $("#fire").hide();
         $("#grass").hide();
+        $("#scloud").hide();
+        $("#lcloud").hide();
     }
 
     function showGame() {
@@ -341,6 +346,8 @@ $(document).ready(() => {
         $("#countdown").show();
         $("#fire").show();
         $("#grass").show();
+        $("#scloud").show();
+        $("#lcloud").show();
     }
 
     function Tizzy() {

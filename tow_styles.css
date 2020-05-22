@@ -126,6 +126,14 @@ body {
     z-index: 8;
 }
 
+#smlcloud {
+    width: 100px;
+    height: 75px;
+    position: absolute;
+    margin-left: 35%;
+    margin-top: 65%;
+}
+
 .tizzy {
     z-index: 4;
     width: 100%;
