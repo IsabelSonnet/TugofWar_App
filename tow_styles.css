@@ -120,27 +120,6 @@ body {
     z-index: 1;
 }
 
-#grass {
-    position: absolute;
-    bottom: 0;
-    z-index: 3;
-}
-
-#grass1 {
-    position: absolute;
-    margin-left: 0%;
-}
-
-#grass2 {
-    position: absolute;
-    margin-left: 50%;
-}
-
-#grass3 {
-    position: absolute;
-    margin-left: 80%;
-}
-
 .tizzy {
     z-index: 4;
     width: 100%;
@@ -222,6 +201,38 @@ body {
 .tizzyimg {
     width: 300px;
     height: 100px;
+}
+
+#grass1 {
+    width: 25%;
+    height: 10%;
+    position: absolute;
+    margin-left: 0%;
+    bottom: 0;
+}
+
+#grass2 {
+    width: 25%;
+    height: 10%;
+    position: absolute;
+    margin-left: 25%;
+    bottom: 0;
+}
+
+#grass3 {
+    width: 25%;
+    height: 10%;
+    position: absolute;
+    margin-left: 50%;
+    bottom: 0;
+}
+
+#grass4 {
+    width: 25%;
+    height: 10%;
+    position: absolute;
+    margin-left: 75%;
+    bottom: 0;
 }
 
 #cloud {
