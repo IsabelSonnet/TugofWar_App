@@ -234,7 +234,9 @@ $(document).ready(() => {
     $("#startGame").click(function () {
         clearInterval(timer);
         remaining = 25;
-        timer = setInterval(function () { bigTimer() }, 1000);
+        timer = setInterval(function () {
+            bigTimer()
+        }, 1000);
         $("#instructions").hide();
         showGame();
         $("#nwinner").hide();
@@ -248,7 +250,9 @@ $(document).ready(() => {
         } else {
             clearInterval(timer);
             remaining = 25;
-            timer = setInterval(function () { bigTimer() }, 1000);
+            timer = setInterval(function () {
+                bigTimer()
+            }, 1000);
             showGame();
             $("#nwinner").hide();
             $("#showgreen").hide();
@@ -274,10 +278,14 @@ $(document).ready(() => {
     });
 
     var remaining = 25;
-    var timer = setInterval(function () { doNothing() }, 1000);
+    var timer = setInterval(function () {
+        doNothing()
+    }, 1000);
+
     function doNothing() {
         return;
     }
+
     function bigTimer() {
         if (remaining <= 1) {
             console.log("hey the timer got here");

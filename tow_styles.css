@@ -117,10 +117,10 @@ body {
     margin-left: 46%;
     bottom: 0;
     position: absolute;
-    z-index: 6;
+    z-index: 1;
 }
 
-.grass{
+.grass {
     fill: mediumseagreen;
     stroke-width: 3px;
     stroke: green;
