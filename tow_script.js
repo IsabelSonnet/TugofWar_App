@@ -86,6 +86,7 @@ $(document).ready(() => {
                     $("#lwinner").show();
                     $("#rwinner").hide();
                     clearInterval(timer);
+                    $("#fire").show;
                     hideGame();
                     $("#nwinner").hide();
                     $("#showgreen").hide();
@@ -101,6 +102,7 @@ $(document).ready(() => {
                     $("#rwinner").show();
                     $("#lwinner").hide();
                     clearInterval(timer);
+                    $("#fire").show;
                     hideGame();
                     $("#nwinner").hide();
                     $("#showgreen").hide();
@@ -125,6 +127,7 @@ $(document).ready(() => {
                     $("#rwinner").show();
                     $("#lwinner").hide();
                     clearInterval(timer);
+                    $("#fire").show;
                     hideGame();
                     $("#nwinner").hide();
                     $("#showgreen").hide();
@@ -140,6 +143,7 @@ $(document).ready(() => {
                     $("#lwinner").show();
                     $("#rwinner").hide();
                     clearInterval(timer);
+                    $("#fire").show;
                     hideGame();
                     $("#nwinner").hide();
                     $("#showgreen").hide();
@@ -172,6 +176,7 @@ $(document).ready(() => {
                 clearInterval(timer);
                 $("#lwinner").show();
                 $("#rwinner").hide();
+                $("#fire").show;
                 hideGame();
                 $("#nwinner").hide();
                 $("#showgreen").hide();
@@ -192,6 +197,7 @@ $(document).ready(() => {
                 clearInterval(timer);
                 $("#rwinner").show();
                 $("#lwinner").hide();
+                $("#fire").show;
                 hideGame();
                 $("#nwinner").hide();
                 $("#showgreen").hide();
@@ -290,6 +296,7 @@ $(document).ready(() => {
         if (remaining <= 1) {
             console.log("hey the timer got here");
             clearInterval(timer);
+            $("#fire").show;
             hideGame();
             $("#nwinner").show();
             $("#showgreen").hide();
@@ -310,6 +317,7 @@ $(document).ready(() => {
 
     function miniTimer() {
         hideGame();
+        $("#fire").hide;
         $("#nwinner").hide();
         $("#showgreen").show();
         $gamePlay = false;
