@@ -8,11 +8,6 @@ $(document).ready(() => {
     let $line = $("#line");
     let $rplayer = $("#rplayer");
     let $lplayer = $("#lplayer");
-    let $fire = $("#fire");
-    let $grass = $("#grass");
-    let $scloud = $("#scloud");
-    let $lcloud = $("#lcloud");
-
 
     let $rteam = $("#rteam");
     let $lteam = $("#lteam");
@@ -241,6 +236,7 @@ $(document).ready(() => {
             bigTimer()
         }, 1000);
         $("#instructions").hide();
+        $("#fire").hide();
         showGame();
         $("#nwinner").hide();
         $("#showgreen").hide();
@@ -257,6 +253,7 @@ $(document).ready(() => {
                 bigTimer()
             }, 1000);
             showGame();
+            $("#fire").hide();
             $("#nwinner").hide();
             $("#showgreen").hide();
             $("#rtizzy").hide();
@@ -331,7 +328,6 @@ $(document).ready(() => {
         $mtow.hide();
         $("#scoreboard").hide();
         $("#countdown").hide();
-        $("#fire").hide();
         $("#grass").hide();
         $("#cloud").hide();
     }
@@ -343,7 +339,6 @@ $(document).ready(() => {
         $mtow.show();
         $("#scoreboard").show();
         $("#countdown").show();
-        $("#fire").show();
         $("#grass").show();
         $("#cloud").show();
     }
