@@ -86,7 +86,7 @@ $(document).ready(() => {
                     $("#lwinner").show();
                     $("#rwinner").hide();
                     clearInterval(timer);
-                    $("#fire").show;
+                    $("#fire").show();
                     hideGame();
                     $("#nwinner").hide();
                     $("#showgreen").hide();
@@ -102,7 +102,7 @@ $(document).ready(() => {
                     $("#rwinner").show();
                     $("#lwinner").hide();
                     clearInterval(timer);
-                    $("#fire").show;
+                    $("#fire").show();
                     hideGame();
                     $("#nwinner").hide();
                     $("#showgreen").hide();
@@ -127,7 +127,7 @@ $(document).ready(() => {
                     $("#rwinner").show();
                     $("#lwinner").hide();
                     clearInterval(timer);
-                    $("#fire").show;
+                    $("#fire").show();
                     hideGame();
                     $("#nwinner").hide();
                     $("#showgreen").hide();
@@ -143,7 +143,7 @@ $(document).ready(() => {
                     $("#lwinner").show();
                     $("#rwinner").hide();
                     clearInterval(timer);
-                    $("#fire").show;
+                    $("#fire").show();
                     hideGame();
                     $("#nwinner").hide();
                     $("#showgreen").hide();
@@ -176,7 +176,7 @@ $(document).ready(() => {
                 clearInterval(timer);
                 $("#lwinner").show();
                 $("#rwinner").hide();
-                $("#fire").show;
+                $("#fire").show();
                 hideGame();
                 $("#nwinner").hide();
                 $("#showgreen").hide();
@@ -197,7 +197,7 @@ $(document).ready(() => {
                 clearInterval(timer);
                 $("#rwinner").show();
                 $("#lwinner").hide();
-                $("#fire").show;
+                $("#fire").show();
                 hideGame();
                 $("#nwinner").hide();
                 $("#showgreen").hide();
@@ -239,7 +239,7 @@ $(document).ready(() => {
         clearInterval(timer);
         remaining = 25;
         timer = setInterval(function () {
-            bigTimer()
+            bigTimer();
         }, 1000);
         $("#instructions").hide();
         $("#fire").hide();
@@ -250,13 +250,13 @@ $(document).ready(() => {
     });
 
     $(".restart").click(function () {
-        if ($rscore + $lscore == 13 || $rscore + $lscore == 33 || $rscore + $lscore == 56 || $rscore + $lscore == 99) {
+        if ($rscore + $lscore == 13 || $rscore + $lscore == 33 || $rscore + $lscore == 56 || $rscore + $lscore == 99 || $rscore + $lscore == 1000) {
             Tizzy();
         } else {
             clearInterval(timer);
             remaining = 25;
             timer = setInterval(function () {
-                bigTimer()
+                bigTimer();
             }, 1000);
             showGame();
             $("#fire").hide();
@@ -285,7 +285,7 @@ $(document).ready(() => {
 
     var remaining = 25;
     var timer = setInterval(function () {
-        doNothing()
+        doNothing();
     }, 1000);
 
     function doNothing() {
@@ -296,7 +296,7 @@ $(document).ready(() => {
         if (remaining <= 1) {
             console.log("hey the timer got here");
             clearInterval(timer);
-            $("#fire").show;
+            $("#fire").show();
             hideGame();
             $("#nwinner").show();
             $("#showgreen").hide();
@@ -317,7 +317,7 @@ $(document).ready(() => {
 
     function miniTimer() {
         hideGame();
-        $("#fire").hide;
+        $("#fire").hide();
         $("#nwinner").hide();
         $("#showgreen").show();
         $gamePlay = false;
