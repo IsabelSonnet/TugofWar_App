@@ -228,34 +228,42 @@ body {
 }
 
 #fire1 {
-    width: 28%;
-    height: 30%;
+    width: 20%;
+    height: 20%;
     position: absolute;
     margin-left: 0%;
     bottom: 0;
 }
 
 #fire2 {
-    width: 28%;
-    height: 30%;
+    width: 20%;
+    height: 20%;
     position: absolute;
-    margin-left: 25%;
+    margin-left: 20%;
     bottom: 0;
 }
 
 #fire3 {
-    width: 28%;
-    height: 30%;
+    width: 20%;
+    height: 20%;
     position: absolute;
-    margin-left: 50%;
+    margin-left: 40%;
     bottom: 0;
 }
 
 #fire4 {
-    width: 24%;
-    height: 30%;
+    width: 20%;
+    height: 20%;
     position: absolute;
-    margin-left: 75%;
+    margin-left: 60%;
+    bottom: 0;
+}
+
+#fire5 {
+    width: 19%;
+    height: 20%;
+    position: absolute;
+    margin-left: 80%;
     bottom: 0;
 }
 

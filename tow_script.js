@@ -251,6 +251,7 @@ $(document).ready(() => {
 
     $(".restart").click(function () {
         if ($rscore + $lscore == 13 || $rscore + $lscore == 33 || $rscore + $lscore == 56 || $rscore + $lscore == 99 || $rscore + $lscore == 1000) {
+            $("#fire").hide();
             Tizzy();
         } else {
             clearInterval(timer);
@@ -326,7 +327,8 @@ $(document).ready(() => {
     }
 
     function keyWorks() {
-        $minigame = true;
+        console.log("can hit key now");
+        $miniGame = true;
     }
 
     function hideGame() {
