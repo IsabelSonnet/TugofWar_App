@@ -225,7 +225,9 @@ body {
     margin-left: 75%;
     bottom: 0;
 
-}#fire1 {
+}
+
+#fire1 {
     width: 28%;
     height: 30%;
     position: absolute;
