@@ -226,24 +226,24 @@ body {
     bottom: 0;
 
 }#fire1 {
-    width: 25%;
-    height: 10%;
+    width: 28%;
+    height: 30%;
     position: absolute;
     margin-left: 0%;
     bottom: 0;
 }
 
 #fire2 {
-    width: 25%;
-    height: 10%;
+    width: 28%;
+    height: 30%;
     position: absolute;
     margin-left: 25%;
     bottom: 0;
 }
 
 #fire3 {
-    width: 25%;
-    height: 10%;
+    width: 28%;
+    height: 30%;
     position: absolute;
     margin-left: 50%;
     bottom: 0;
@@ -251,7 +251,7 @@ body {
 
 #fire4 {
     width: 24%;
-    height: 10%;
+    height: 30%;
     position: absolute;
     margin-left: 75%;
     bottom: 0;
