@@ -233,6 +233,37 @@ body {
     position: absolute;
     margin-left: 75%;
     bottom: 0;
+
+}#fire1 {
+    width: 25%;
+    height: 10%;
+    position: absolute;
+    margin-left: 0%;
+    bottom: 0;
+}
+
+#fire2 {
+    width: 25%;
+    height: 10%;
+    position: absolute;
+    margin-left: 25%;
+    bottom: 0;
+}
+
+#fire3 {
+    width: 25%;
+    height: 10%;
+    position: absolute;
+    margin-left: 50%;
+    bottom: 0;
+}
+
+#fire4 {
+    width: 24%;
+    height: 10%;
+    position: absolute;
+    margin-left: 75%;
+    bottom: 0;
 }
 
 #cloud {
