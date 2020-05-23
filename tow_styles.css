@@ -111,15 +111,6 @@ body {
     background: gold;
 }
 
-#fireSize {
-    width: 125px;
-    height: 125px;
-    margin-left: 46%;
-    bottom: 0;
-    position: absolute;
-    z-index: 1;
-}
-
 .tizzy {
     z-index: 4;
     width: 100%;
