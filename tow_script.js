@@ -191,6 +191,15 @@ $(document).ready(() => {
                 $("#nwinner").hide();
                 $("#showgreen").hide();
             }
+        }
+    });
+
+    $(document).keydown(function (event) {
+        if ($gamePlay == false) {
+            return;
+        } else {
+            console.log($rplayer);
+            console.log($lplayer);
 
             if (hasLeftLost($mtow, $lteam, $half) == true) {
                 console.log("collision!");
